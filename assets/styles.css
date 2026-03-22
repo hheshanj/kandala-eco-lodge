@@ -558,7 +558,7 @@
       line-height: 1.8; color: rgba(245,240,232,0.45);
     }
     .footer-bottom {
-      background: rgba(0,0,0,0.3);
+      background:var(--deep);
       padding: 1.2rem 5rem;
       display: flex; justify-content: space-between; align-items: center;
     }
