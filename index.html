@@ -4,27 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Galpothuyaya Eco Lodge — Kandalama, Sri Lanka</title>
+  <meta name="description" content="An intimate eco lodge on the still waters of Kandalama Lake — your sanctuary at the heart of Sri Lanka's ancient Cultural Triangle.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="assets/styles.css" rel="stylesheet">
+  <link href="assets/shared.css" rel="stylesheet">
+  <link href="assets/home.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#" class="nav-logo">Galpothuyaya Eco Lodge</a>
+  <a href="index.html" class="nav-logo">Galpothuyaya<br>Eco Lodge</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#rooms">Rooms</a></li>
-    <li><a href="#dining">Dining</a></li>
-    <li><a href="#explore">Explore</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li><a href="dining.html">Dining</a></li>
+    <li><a href="explore.html">Explore</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="#book" class="nav-book">Reserve a Stay</a>
+  <a href="contact.html" class="nav-book">Reserve a Stay</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- HERO -->
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="nav-drawer">
+  <a href="index.html" class="active">Home</a>
+  <a href="rooms.html">Rooms</a>
+  <a href="dining.html">Dining</a>
+  <a href="explore.html">Explore</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="drawer-book">Reserve a Stay</a>
+</div>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -33,7 +49,7 @@
     <h1 class="hero-title">Where <em>wilderness</em><br>meets grace</h1>
     <p class="hero-sub">An intimate eco lodge on the still waters of Kandalama Lake — your sanctuary at the heart of Sri Lanka's ancient Cultural Triangle.</p>
     <div class="hero-ctas">
-      <a href="#book" class="btn-primary">Book Your Escape</a>
+      <a href="contact.html" class="btn-primary">Book Your Escape</a>
       <a href="#about" class="btn-ghost">Discover the Lodge</a>
     </div>
   </div>
@@ -51,8 +67,8 @@
     <span class="strip-item"><span class="strip-dot"></span>Near Sigiriya</span>
     <span class="strip-item"><span class="strip-dot"></span>Dambulla Cave Temples</span>
     <span class="strip-item"><span class="strip-dot"></span>Authentic Sri Lankan Cuisine</span>
-    <span class="strip-item"><span class="strip-dot"></span>Treehouse & Villas</span>
-    <span class="strip-item"><span class="strip-dot"></span>Buffalo Herds & Wildlife</span>
+    <span class="strip-item"><span class="strip-dot"></span>Treehouse &amp; Villas</span>
+    <span class="strip-item"><span class="strip-dot"></span>Buffalo Herds &amp; Wildlife</span>
     <span class="strip-item"><span class="strip-dot"></span>Cultural Triangle Gateway</span>
     <!-- duplicate for seamless loop -->
     <span class="strip-item"><span class="strip-dot"></span>Kandalama Lakefront</span>
@@ -60,13 +76,15 @@
     <span class="strip-item"><span class="strip-dot"></span>Near Sigiriya</span>
     <span class="strip-item"><span class="strip-dot"></span>Dambulla Cave Temples</span>
     <span class="strip-item"><span class="strip-dot"></span>Authentic Sri Lankan Cuisine</span>
-    <span class="strip-item"><span class="strip-dot"></span>Treehouse & Villas</span>
-    <span class="strip-item"><span class="strip-dot"></span>Buffalo Herds & Wildlife</span>
+    <span class="strip-item"><span class="strip-dot"></span>Treehouse &amp; Villas</span>
+    <span class="strip-item"><span class="strip-dot"></span>Buffalo Herds &amp; Wildlife</span>
     <span class="strip-item"><span class="strip-dot"></span>Cultural Triangle Gateway</span>
   </div>
 </div>
 
-<!-- ABOUT -->
+<!-- ══════════════════════════════════════
+     ABOUT
+══════════════════════════════════════ -->
 <section class="about" id="about">
   <div class="about-visual">
     <img src="generated.png" alt="Kandalama Lake at dusk" loading="lazy">
@@ -84,15 +102,15 @@
     <div class="about-highlights reveal reveal-delay-3">
       <div class="highlight-item">
         <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-        <p>Lakefront setting on Kandalama Tank with direct water access</p>
+        <p>Lakefront on Kandalama Tank with direct water access</p>
       </div>
       <div class="highlight-item">
         <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        <p>7 rooms, 3 villas, private cottages & a one-of-a-kind tree house</p>
+        <p>7 rooms, 3 villas, private cottages &amp; a one-of-a-kind tree house</p>
       </div>
       <div class="highlight-item">
         <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        <p>Free breakfast, 24-hr room service & curated excursions</p>
+        <p>Free breakfast, 24-hr room service &amp; curated excursions</p>
       </div>
       <div class="highlight-item">
         <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
@@ -102,139 +120,121 @@
   </div>
 </section>
 
-<!-- ROOMS -->
-<section class="rooms-section" id="rooms">
-  <div class="rooms-header">
+<!-- ══════════════════════════════════════
+     ROOMS TEASER
+══════════════════════════════════════ -->
+<section class="rooms-teaser">
+  <div class="rooms-teaser-header reveal">
     <div>
-      <p class="section-label reveal">Accommodation</p>
-      <h2 class="section-title reveal reveal-delay-1">Rest in <em>the wild</em></h2>
+      <p class="section-label">Accommodation</p>
+      <h2 class="section-title">Rest in <em>the wild</em></h2>
     </div>
-    <a href="#book" class="btn-primary reveal">View Availability</a>
+    <a href="rooms.html" class="section-link">View All Rooms &amp; Stays →</a>
   </div>
-  <div class="rooms-grid">
-    <div class="room-card reveal">
-      <img class="room-card-img" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Lodge Room" loading="lazy">
+  <div class="rooms-teaser-grid">
+    <a href="rooms.html#forest-room" class="room-card reveal">
+      <img class="room-card-img" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Forest Room">
       <div class="room-card-info">
-        <p class="room-card-type">From LKR / night</p>
-        <h3 class="room-card-name">Forest<br>Room</h3>
-        <p class="room-card-desc">Spacious rooms with locally inspired décor, soundproofed windows, stone fireplace, sofa, and private bathroom with bathrobes.</p>
-        <a href="#book" class="room-card-link">Book Room →</a>
+        <p class="room-card-type">Forest Room</p>
+        <h3 class="room-card-name">Into the<br>Canopy</h3>
+        <p class="room-card-hook">Spacious garden-view rooms with stone accents, fireplace &amp; robes.</p>
+        <span class="room-card-cta">Explore Room →</span>
       </div>
-    </div>
-    <div class="room-card reveal reveal-delay-1">
-      <img class="room-card-img" src="https://images.unsplash.com/photo-1504652517000-ae1068478c59?w=600&q=80" alt="Lodge Villa" loading="lazy">
+    </a>
+    <a href="rooms.html#lakeside-villa" class="room-card reveal reveal-delay-1">
+      <img class="room-card-img" src="https://images.unsplash.com/photo-1504652517000-ae1068478c59?w=800&q=80" alt="Lakeside Villa">
       <div class="room-card-info">
-        <p class="room-card-type">From LKR / night</p>
-        <h3 class="room-card-name">Lakeside<br>Villa</h3>
-        <p class="room-card-desc">Three private villas nestled in the native farm environment, offering seclusion with sweeping views over the Kandalama wetlands.</p>
-        <a href="#book" class="room-card-link">Book Villa →</a>
+        <p class="room-card-type">Lakeside Villa</p>
+        <h3 class="room-card-name">Sweeping<br>Wetland Views</h3>
+        <p class="room-card-hook">Three private villas nestled in native farmland, overlooking the lake.</p>
+        <span class="room-card-cta">Explore Villa →</span>
       </div>
-    </div>
-    <div class="room-card reveal reveal-delay-2">
-      <img class="room-card-img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80" alt="Tree House" loading="lazy">
+    </a>
+    <a href="rooms.html#tree-house" class="room-card reveal reveal-delay-2">
+      <img class="room-card-img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80" alt="The Tree House">
       <div class="room-card-info">
         <p class="room-card-type">Signature Experience</p>
         <h3 class="room-card-name">The<br>Tree House</h3>
-        <p class="room-card-desc">A unique structure perched above the jungle floor — wake to birdsong and the first light filtering through the forest canopy.</p>
-        <a href="#book" class="room-card-link">Book Tree House →</a>
+        <p class="room-card-hook">Perched above the jungle floor — wake to birdsong and first light.</p>
+        <span class="room-card-cta">Explore Tree House →</span>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
-<!-- DINING -->
-<section class="feature-split" id="dining">
-  <div class="feature-visual">
-    <img src="food_generated.png" alt="Sri Lankan cuisine" loading="lazy">
-    <div class="overlay"></div>
+<!-- ══════════════════════════════════════
+     DINING TEASER
+══════════════════════════════════════ -->
+<section class="dining-teaser" id="dining-teaser">
+  <div class="dining-teaser-visual">
+    <img src="food_generated.png" alt="Sri Lankan cuisine at Galpothuyaya">
+    <div class="dining-teaser-overlay"></div>
   </div>
-  <div class="feature-content">
-    <p class="section-label reveal">On-site Restaurant</p>
-    <h2 class="section-title reveal reveal-delay-1">Food that tastes<br>like <em>home</em></h2>
-    <p class="feature-body reveal reveal-delay-2">
-      Meals at Galpothuyaya are prepared fresh, on request, using ingredients sourced from the surrounding land and local markets. Our cook brings generations of Sri Lankan culinary tradition to every plate — unhurried, generous, and unmistakably real.
+  <div class="dining-teaser-content reveal">
+    <p class="section-label on-dark">On-site Restaurant</p>
+    <h2 class="section-title on-dark">Food that tastes<br>like <em>home</em></h2>
+    <p class="dining-teaser-body">
+      Meals at Galpothuyaya are prepared fresh, on request, using ingredients sourced from the surrounding land and local markets. Generations of Sri Lankan culinary tradition on every plate.
     </p>
-    <div class="dishes reveal reveal-delay-3">
-      <div class="dish-item">
-        <div>
-          <p class="dish-name">Rice & Curry</p>
-          <p class="dish-desc">Daily traditional meal, multiple curries, sambol & papadum</p>
-        </div>
-      </div>
-      <div class="dish-item">
-        <div>
-          <p class="dish-name">Hoppers & String Hoppers</p>
-          <p class="dish-desc">Classic Sri Lankan breakfast, made to order each morning</p>
-        </div>
-      </div>
-      <div class="dish-item">
-        <div>
-          <p class="dish-name">Fresh Tropical Fruit</p>
-          <p class="dish-desc">Seasonal fruits from local farms — jackfruit, mango, rambutan</p>
-        </div>
-      </div>
+    <div class="dining-dishes">
+      <div class="dish-pill">Rice &amp; Curry</div>
+      <div class="dish-pill">Hoppers &amp; String Hoppers</div>
+      <div class="dish-pill">Fresh Tropical Fruit</div>
+      <div class="dish-pill">BBQ Nights</div>
     </div>
-    <p style="font-size:0.72rem;color:rgba(245,240,232,0.35);margin-top:2rem;letter-spacing:0.1em;">
-      ✦ Free breakfast included with all stays
-    </p>
+    <a href="dining.html" class="btn-outline-gold">Explore Our Dining →</a>
   </div>
 </section>
 
-<!-- ATTRACTIONS -->
-<section class="attractions" id="explore">
-  <div class="attractions-header">
-    <p class="section-label reveal">The Cultural Triangle</p>
-    <h2 class="section-title reveal reveal-delay-1">Ancient wonders<br>on your <em>doorstep</em></h2>
+<!-- ══════════════════════════════════════
+     EXPLORE TEASER
+══════════════════════════════════════ -->
+<section class="explore-teaser">
+  <div class="explore-teaser-header reveal">
+    <div>
+      <p class="section-label">The Cultural Triangle</p>
+      <h2 class="section-title">Ancient wonders<br>on your <em>doorstep</em></h2>
+    </div>
+    <a href="explore.html" class="section-link on-dark-link">Explore the Region →</a>
   </div>
-  <div class="attractions-grid">
-    <div class="attraction-card reveal">
-      <p class="attraction-dist">5 min walk</p>
-      <h3 class="attraction-name">Kandalama<br>Lake</h3>
-      <p class="attraction-desc">Step through the jungle to reach your private lakefront. Watch buffalo herds wade at dusk.</p>
-    </div>
-    <div class="attraction-card reveal reveal-delay-1">
-      <p class="attraction-dist">10–15 km</p>
-      <h3 class="attraction-name">Sigiriya Rock<br>Fortress</h3>
-      <p class="attraction-desc">UNESCO World Heritage Site — ancient citadel rising 200m above the jungle plain.</p>
-    </div>
-    <div class="attraction-card reveal reveal-delay-2">
-      <p class="attraction-dist">15 min drive</p>
-      <h3 class="attraction-name">Dambulla Cave<br>Temple</h3>
-      <p class="attraction-desc">Golden Rock Temple housing 157 statues and 2,000-year-old cave paintings.</p>
-    </div>
-    <div class="attraction-card reveal reveal-delay-3">
-      <p class="attraction-dist">Day trip</p>
-      <h3 class="attraction-name">Polonnaruwa<br>Ancient City</h3>
-      <p class="attraction-desc">Explore the medieval capital of Sri Lanka — ruined palaces, stupas and moonstone gates.</p>
-    </div>
-    <div class="attraction-card reveal">
-      <p class="attraction-dist">Nearby</p>
-      <h3 class="attraction-name">Pidurangala<br>Rock</h3>
-      <p class="attraction-desc">Sunrise hike with panoramic views over Sigiriya and the jungle canopy.</p>
-    </div>
-    <div class="attraction-card reveal reveal-delay-1">
-      <p class="attraction-dist">3.3 km</p>
-      <h3 class="attraction-name">Kaludiya<br>Pokuna</h3>
-      <p class="attraction-desc">Serene forest monastery pond — a peaceful detour into nature and contemplation.</p>
-    </div>
-    <div class="attraction-card reveal reveal-delay-2">
-      <p class="attraction-dist">15 min drive</p>
-      <h3 class="attraction-name">Popham's<br>Arboretum</h3>
-      <p class="attraction-desc">A rare dry-zone garden with hundreds of labeled tree species.</p>
-    </div>
-    <div class="attraction-card reveal reveal-delay-3">
-      <p class="attraction-dist">10 km</p>
-      <h3 class="attraction-name">Airport<br>Transfers</h3>
-      <p class="attraction-desc">We arrange convenient transfers to and from Sigiriya Air Force Base Airport.</p>
-    </div>
+  <div class="explore-teaser-cards">
+    <a href="explore.html#sigiriya" class="explore-card reveal">
+      <div class="explore-card-img" style="background-image:url('https://images.unsplash.com/photo-1588416936097-41850ab3d86d?w=700&q=75')"></div>
+      <div class="explore-card-body">
+        <p class="explore-card-dist">10–15 km</p>
+        <h3 class="explore-card-name">Sigiriya Rock Fortress</h3>
+        <p class="explore-card-desc">UNESCO World Heritage Site — ancient citadel rising 200m above the jungle plain.</p>
+        <span class="explore-card-link">Learn More →</span>
+      </div>
+    </a>
+    <a href="explore.html#dambulla" class="explore-card reveal reveal-delay-1">
+      <div class="explore-card-img" style="background-image:url('https://images.unsplash.com/photo-1599661046289-e31897846e41?w=700&q=75')"></div>
+      <div class="explore-card-body">
+        <p class="explore-card-dist">15 min drive</p>
+        <h3 class="explore-card-name">Dambulla Cave Temple</h3>
+        <p class="explore-card-desc">Golden Rock Temple housing 157 statues and 2,000-year-old cave paintings.</p>
+        <span class="explore-card-link">Learn More →</span>
+      </div>
+    </a>
+    <a href="explore.html#kandalama-lake" class="explore-card reveal reveal-delay-2">
+      <div class="explore-card-img" style="background-image:url('assets/kandalama 1.jpeg')"></div>
+      <div class="explore-card-body">
+        <p class="explore-card-dist">5 min walk</p>
+        <h3 class="explore-card-name">Kandalama Lake</h3>
+        <p class="explore-card-desc">Step through the jungle to your private lakefront. Watch buffalo herds wade at dusk.</p>
+        <span class="explore-card-link">Learn More →</span>
+      </div>
+    </a>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- ══════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════ -->
 <section class="testimonials">
   <div class="testimonials-header">
-    <span class="section-label reveal">Guest Stories</span>
-    <h2 class="section-title reveal reveal-delay-1">Heard from those<br>who have <em>stayed</em></h2>
+    <span class="section-label on-dark reveal">Guest Stories</span>
+    <h2 class="section-title on-dark reveal reveal-delay-1">Heard from those<br>who have <em>stayed</em></h2>
   </div>
   <div class="testimonials-grid">
     <div class="testimonial-card reveal">
@@ -255,63 +255,26 @@
   </div>
 </section>
 
-<!-- AMENITIES -->
-<section class="amenities">
-  <div class="amenities-text">
-    <p class="section-label reveal">Everything you need</p>
-    <h2 class="section-title reveal reveal-delay-1">Comfort in<br><em>simplicity</em></h2>
-    <div class="amenity-list reveal reveal-delay-2">
-      <div class="amenity-item"><span class="amenity-icon">✦</span> Free Wi-Fi</div>
-      <div class="amenity-item"><span class="amenity-icon">✦</span> Free Breakfast</div>
-      <div class="amenity-item"><span class="amenity-icon">✦</span> Free Parking</div>
-      <div class="amenity-item"><span class="amenity-icon">✦</span> Room Service 24hr</div>
-      <div class="amenity-item"><span class="amenity-icon">✦</span> Lake Access</div>
-      <div class="amenity-item"><span class="amenity-icon">✦</span> Airport Transfer</div>
-      <div class="amenity-item"><span class="amenity-icon">✦</span> Tour Arrangements</div>
-      <div class="amenity-item"><span class="amenity-icon">✦</span> Laundry Service</div>
-      <div class="amenity-item"><span class="amenity-icon">✦</span> Pet Friendly</div>
-      <div class="amenity-item"><span class="amenity-icon">✦</span> Local Art & Décor</div>
-      <div class="amenity-item"><span class="amenity-icon">✦</span> Check-in from 11am</div>
-      <div class="amenity-item"><span class="amenity-icon">✦</span> Express Check-out</div>
+<!-- ══════════════════════════════════════
+     BOOKING CTA BANNER
+══════════════════════════════════════ -->
+<section class="cta-banner">
+  <div class="cta-banner-bg"></div>
+  <div class="cta-banner-overlay"></div>
+  <div class="cta-banner-content reveal">
+    <span class="section-label on-dark">Plan Your Visit</span>
+    <h2 class="cta-banner-title">Begin your<br><em>wilderness story</em></h2>
+    <p class="cta-banner-sub">Reserve your stay directly — we respond within a day and are happy to tailor your experience.</p>
+    <div class="cta-banner-actions">
+      <a href="contact.html" class="btn-primary">Make an Enquiry</a>
+      <a href="rooms.html" class="btn-ghost">Browse Rooms</a>
     </div>
-  </div>
-  <div class="amenities-visual reveal reveal-delay-2">
-    <img src="room_generated.png" alt="Lodge amenities" loading="lazy">
-    <div class="amenities-visual-inner"></div>
-  </div>
-</section>
-
-<!-- BOOKING CTA -->
-<section class="cta-section" id="book">
-  <div class="cta-bg"></div>
-  <div class="cta-overlay"></div>
-  <div class="cta-content">
-    <span class="section-label reveal">Plan Your Visit</span>
-    <h2 class="cta-title reveal reveal-delay-1">Begin your<br><em>wilderness story</em></h2>
-    <p class="cta-sub reveal reveal-delay-2">Check availability and reserve your stay directly. We respond within a day and are happy to tailor your experience.</p>
-    <form class="cta-form reveal reveal-delay-3" onsubmit="return false;">
-      <div class="cta-form-group">
-        <label>Check In</label>
-        <input type="date" placeholder="dd / mm / yyyy">
-      </div>
-      <div class="cta-form-group">
-        <label>Check Out</label>
-        <input type="date" placeholder="dd / mm / yyyy">
-      </div>
-      <div class="cta-form-group">
-        <label>Guests</label>
-        <input type="number" placeholder="2 guests" min="1" max="10">
-      </div>
-      <button class="cta-submit" type="submit">Check Availability</button>
-    </form>
-    <p style="font-size:0.68rem;color:rgba(245,240,232,0.3);margin-top:1.5rem;letter-spacing:0.08em;">
-      Also available on Booking.com · TripAdvisor · Airbnb
-    </p>
+    <p class="cta-banner-platforms">Also available on Booking.com · TripAdvisor · Airbnb</p>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer id="contact">
+<footer>
   <div class="footer-brand">
     <span class="footer-logo">Galpothuyaya<br>Eco Lodge</span>
     <p class="footer-tagline">A wilderness retreat on the banks of Kandalama Lake, in the heart of Sri Lanka's ancient Cultural Triangle.</p>
@@ -324,19 +287,19 @@
   <div class="footer-col">
     <h4>The Lodge</h4>
     <ul>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#rooms">Accommodation</a></li>
-      <li><a href="#dining">Dining</a></li>
-      <li><a href="#explore">Explore</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="rooms.html">Accommodation</a></li>
+      <li><a href="dining.html">Dining</a></li>
+      <li><a href="explore.html">Explore</a></li>
     </ul>
   </div>
   <div class="footer-col">
     <h4>Book</h4>
     <ul>
-      <li><a href="#book">Reserve Direct</a></li>
+      <li><a href="contact.html">Reserve Direct</a></li>
       <li><a href="https://www.booking.com" target="_blank">Booking.com</a></li>
       <li><a href="https://www.airbnb.com/rooms/1221970085943653948" target="_blank">Airbnb</a></li>
-      <li><a href="#book">Group Enquiry</a></li>
+      <li><a href="contact.html">Group Enquiry</a></li>
     </ul>
   </div>
   <div class="footer-col">
@@ -361,13 +324,29 @@
     nav.classList.toggle('scrolled', window.scrollY > 60);
   });
 
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('nav-drawer');
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    drawer.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
   // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
   revealEls.forEach(el => observer.observe(el));
 </script>
 </body>

@@ -1,0 +1,116 @@
+/* ── CONTACT PAGE — page-specific styles ── */
+
+.page-hero--short { min-height: 280px; height: 35vh; }
+
+.contact-section {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  min-height: 85vh; background: var(--warm-white);
+}
+
+/* ── LEFT: INFO ── */
+.contact-info {
+  background: var(--cream);
+  padding: 6rem 5rem;
+  display: flex; flex-direction: column; justify-content: flex-start;
+}
+.contact-intro {
+  font-size: 0.95rem; font-weight: 300; line-height: 1.85;
+  color: #3a3a3a; margin: 1.5rem 0 3rem; max-width: 440px;
+}
+.contact-details {
+  display: flex; flex-direction: column; gap: 2rem;
+  margin-bottom: 3rem;
+}
+.detail-block h3 {
+  font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.8rem;
+}
+.detail-block p {
+  font-size: 0.95rem; font-weight: 300; line-height: 1.7; color: var(--text);
+}
+.detail-block a { color: var(--text); text-decoration: none; transition: color 0.2s; }
+.detail-block a:hover { color: var(--moss); }
+
+.map-embed {
+  margin-top: auto; border: 1px solid rgba(46,77,48,0.1);
+  background: #eaeaea; filter: grayscale(80%) contrast(1.1);
+}
+
+/* ── RIGHT: FORM ── */
+.contact-form-wrap {
+  background: var(--deep); padding: 6rem 5rem;
+  position: relative; overflow: hidden;
+}
+.contact-form-wrap::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&q=80') center/cover no-repeat;
+  opacity: 0.04; mix-blend-mode: overlay; pointer-events: none;
+}
+.form-header { margin-bottom: 3.5rem; position: relative; z-index: 2; }
+.form-title { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 300; color: var(--cream); margin-top: 0.5rem; }
+
+.booking-form {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; gap: 1.5rem; max-width: 580px;
+}
+.form-row { display: flex; flex-direction: column; gap: 1.5rem; }
+.form-row-split { flex-direction: row; gap: 1.5rem; }
+.form-row-split .form-group { flex: 1; }
+
+.form-group { display: flex; flex-direction: column; gap: 0.6rem; }
+.form-group label {
+  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0.85;
+}
+.form-group label .opt { text-transform: none; letter-spacing: normal; color: rgba(245,240,232,0.4); font-style: italic; font-size: 0.65rem; margin-left: 0.3rem; }
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  background: rgba(245,240,232,0.03);
+  border: 1px solid rgba(201,169,110,0.15);
+  padding: 1rem 1.2rem;
+  font-family: 'Jost', sans-serif; font-size: 0.95rem; font-weight: 300; color: var(--cream);
+  outline: none; transition: border-color 0.3s, background 0.3s;
+}
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+  color: rgba(245,240,232,0.25);
+}
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+  border-color: var(--gold); background: rgba(245,240,232,0.06);
+}
+.form-group select {
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+}
+
+.btn-submit {
+  display: inline-block; align-self: flex-start;
+  font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; cursor: pointer;
+  color: var(--deep); background: var(--gold);
+  border: none; padding: 1.2rem 2.5rem; margin-top: 1rem;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+.form-disclaimer {
+  font-size: 0.75rem; font-weight: 300; line-height: 1.6;
+  color: rgba(245,240,232,0.4); margin-top: 1.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .contact-section { grid-template-columns: 1fr; }
+  .contact-info { padding: 4rem 3rem; }
+  .contact-form-wrap { padding: 4rem 3rem; }
+  .form-row-split { flex-direction: column; gap: 1.5rem; }
+}
+
+@media (max-width: 600px) {
+  .contact-info { padding: 3rem 2rem; }
+  .contact-form-wrap { padding: 4rem 2rem; }
+  .btn-submit { width: 100%; text-align: center; }
+}

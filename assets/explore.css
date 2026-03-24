@@ -1,0 +1,108 @@
+/* ── EXPLORE PAGE — page-specific styles ── */
+
+/* INTRO */
+.explore-intro {
+  background: var(--cream); padding: 5rem 5rem 3rem;
+}
+.explore-intro-inner {
+  max-width: 740px; margin: 0 auto; text-align: center;
+}
+.explore-intro-body {
+  font-size: 1.05rem; font-weight: 300; line-height: 1.85;
+  color: #3a3a3a; margin-top: 1rem;
+}
+
+/* ATTRACTIONS */
+.attractions-full {
+  padding: 4rem 5rem 8rem;
+  background: var(--cream);
+}
+.attractions-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.attraction-card {
+  background: white; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(13,26,15,0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.attraction-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(13,26,15,0.06); }
+.attraction-img {
+  height: 240px; background-size: cover; background-position: center;
+}
+.attraction-info { padding: 2rem 1.8rem; }
+.attraction-dist {
+  display: inline-block;
+  font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--deep); background: var(--gold-light);
+  padding: 0.3rem 0.8rem; border-radius: 20px;
+  margin-bottom: 1.2rem;
+}
+.attraction-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 400; color: var(--deep); line-height: 1.2; margin-bottom: 0.8rem;
+}
+.attraction-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.6; color: var(--text); margin-bottom: 1.2rem; }
+.attraction-tip { font-size: 0.75rem; font-weight: 300; color: var(--sage); font-style: italic; }
+
+/* LOCAL EXPERIENCES */
+.local-experiences {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  min-height: 80vh;
+}
+.local-exp-visual { position: relative; overflow: hidden; }
+.local-exp-visual img { width: 100%; height: 100%; object-fit: cover; }
+.local-exp-overlay { position: absolute; inset: 0; background: rgba(13,26,15,0.2); }
+.local-exp-content {
+  background: var(--forest); padding: 7rem 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.local-exp-body {
+  font-size: 0.95rem; font-weight: 300; line-height: 1.85;
+  color: rgba(245,240,232,0.68); max-width: 440px; margin: 1.5rem 0 3rem;
+}
+.exp-list { list-style: none; display: flex; flex-direction: column; gap: 2.2rem; }
+.exp-list li { display: flex; align-items: flex-start; gap: 1rem; }
+.exp-icon { color: var(--gold); margin-top: 3px; font-size: 0.8rem; }
+.exp-list h4 { font-size: 0.9rem; font-weight: 500; color: var(--cream); margin-bottom: 0.4rem; letter-spacing: 0.05em; }
+.exp-list p { font-size: 0.8rem; font-weight: 300; line-height: 1.6; color: rgba(245,240,232,0.5); }
+
+/* LOGISTICS */
+.logistics {
+  background: var(--warm-white); padding: 7rem 5rem;
+  display: flex; justify-content: center;
+}
+.logistics-inner {
+  max-width: 900px; width: 100%;
+  display: grid; grid-template-columns: 2fr 1fr; gap: 4rem;
+  background: white; padding: 4rem;
+  border: 1px solid rgba(46,77,48,0.1);
+}
+.logistics-text h2 { margin-bottom: 1.5rem; }
+.logistics-body { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #3a3a3a; margin-bottom: 2.5rem; }
+.logistics-info { display: flex; flex-direction: column; gap: 1.5rem; }
+.logistics-info p { font-size: 0.85rem; font-weight: 300; line-height: 1.7; color: var(--text); }
+.logistics-info strong { font-weight: 500; color: var(--deep); }
+.logistics-cta {
+  background: var(--deep); padding: 2.5rem;
+  display: flex; flex-direction: column; justify-content: center; text-align: center;
+  align-items: center;
+}
+.logistics-cta p { font-size: 0.85rem; font-weight: 300; line-height: 1.6; color: var(--cream); margin-bottom: 1.5rem; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .explore-intro { padding: 4rem 2.5rem 2rem; }
+  .attractions-full { padding: 2rem 2.5rem 6rem; }
+  .attractions-grid { grid-template-columns: 1fr 1fr; }
+  .local-experiences { grid-template-columns: 1fr; }
+  .local-exp-visual { min-height: 400px; order: 2; }
+  .local-exp-content { padding: 5rem 3rem; order: 1; }
+  .logistics { padding: 5rem 2.5rem; }
+  .logistics-inner { grid-template-columns: 1fr; gap: 3rem; padding: 3rem; }
+}
+
+@media (max-width: 600px) {
+  .attractions-grid { grid-template-columns: 1fr; }
+  .logistics-inner { padding: 2rem; }
+  .local-exp-content { padding: 4rem 2rem; }
+}

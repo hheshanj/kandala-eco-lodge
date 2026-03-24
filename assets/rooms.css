@@ -1,0 +1,139 @@
+/* ── ROOMS PAGE — page-specific styles ── */
+
+/* INTRO */
+.rooms-intro {
+  background: var(--cream); padding: 5rem;
+  border-bottom: 1px solid rgba(46,77,48,0.08);
+}
+.rooms-intro-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+.rooms-intro-body {
+  font-size: 1rem; font-weight: 300; line-height: 1.85;
+  color: #3a3a3a; margin-top: 1rem;
+}
+
+/* ROOM DETAIL */
+.room-detail {
+  display: grid; grid-template-columns: 1.1fr 0.9fr;
+  min-height: 80vh; gap: 0;
+}
+.room-detail--alt { grid-template-columns: 0.9fr 1.1fr; }
+
+.room-detail-gallery {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px; overflow: hidden;
+  background: var(--deep);
+}
+.room-detail-main {
+  grid-column: 1 / -1;
+  width: 100%; height: 100%; object-fit: cover;
+  max-height: 480px;
+}
+.room-detail-thumb {
+  width: 100%; height: 180px; object-fit: cover;
+  opacity: 0.85; transition: opacity 0.3s;
+}
+.room-detail-thumb:hover { opacity: 1; }
+
+.room-detail-info {
+  background: var(--warm-white); padding: 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.room-detail--alt .room-detail-info { background: var(--cream); }
+
+.room-detail-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 300; line-height: 1.1; color: var(--deep);
+  margin: 0.5rem 0 1.5rem;
+}
+.room-detail-name em { font-style: italic; color: var(--moss); }
+.room-detail-desc {
+  font-size: 0.92rem; font-weight: 300; line-height: 1.85;
+  color: #3a3a3a; margin-bottom: 2rem;
+}
+.room-features {
+  list-style: none; display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 1rem; margin-bottom: 2.5rem;
+}
+.room-features li {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.82rem; font-weight: 300; color: var(--text);
+}
+.feat-icon { color: var(--gold); flex-shrink: 0; font-size: 0.55rem; }
+
+/* AMENITIES */
+.amenities-section {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  padding: 8rem 5rem;
+  background: var(--deep);
+}
+.amenities-inner { display: flex; flex-direction: column; justify-content: center; padding-right: 4rem; }
+.amenities-body {
+  font-size: 0.9rem; font-weight: 300; line-height: 1.85;
+  color: rgba(245,240,232,0.6); margin: 1.5rem 0 2.5rem;
+}
+.amenities-section .section-title { color: var(--cream); }
+.amenities-section .section-title em { color: var(--gold-light); }
+.amenities-section .section-label { color: var(--gold); opacity: 0.75; }
+.amenities-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+}
+.amenity-item {
+  display: flex; align-items: center; gap: 0.8rem;
+  padding: 0.85rem 0; border-bottom: 1px solid rgba(245,240,232,0.06);
+  font-size: 0.82rem; font-weight: 300; color: rgba(245,240,232,0.75);
+}
+.amenity-icon { color: var(--gold); flex-shrink: 0; font-size: 0.55rem; }
+.amenities-visual { position: relative; overflow: hidden; }
+.amenities-visual img { width: 100%; height: 100%; object-fit: cover; }
+.amenities-visual-frame {
+  position: absolute; inset: 2rem 0 0 2rem;
+  border: 1px solid rgba(201,169,110,0.2);
+  pointer-events: none;
+}
+
+/* ROOMS CTA */
+.rooms-cta {
+  position: relative;
+  background: var(--forest); padding: 7rem 5rem;
+  text-align: center;
+  overflow: hidden;
+}
+.rooms-cta::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.rooms-cta-content { max-width: 600px; margin: 0 auto; }
+.rooms-cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300; line-height: 1.15; color: var(--cream);
+  margin: 0.8rem 0 1.2rem;
+}
+.rooms-cta-title em { font-style: italic; color: var(--gold-light); }
+.rooms-cta-sub {
+  font-size: 0.9rem; font-weight: 300; line-height: 1.75;
+  color: rgba(245,240,232,0.6); margin-bottom: 2.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .rooms-intro { padding: 3.5rem 2.5rem; }
+  .room-detail, .room-detail--alt { grid-template-columns: 1fr; }
+  .room-detail--alt .room-detail-info { order: -1; }
+  .room-detail-info { padding: 3.5rem 2.5rem; }
+  .room-features { grid-template-columns: 1fr; }
+  .amenities-section { grid-template-columns: 1fr; padding: 5rem 2.5rem; }
+  .amenities-inner { padding-right: 0; }
+  .amenities-visual { min-height: 360px; margin-top: 3rem; }
+  .rooms-cta { padding: 5rem 2.5rem; }
+}
+@media (max-width: 600px) {
+  .room-detail-gallery { grid-template-columns: 1fr; }
+  .room-detail-thumb { display: none; }
+  .room-detail-main { max-height: 300px; }
+  .amenities-grid { grid-template-columns: 1fr; }
+}
