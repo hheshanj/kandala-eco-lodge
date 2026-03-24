@@ -46,63 +46,142 @@
 
 /* LOCAL EXPERIENCES */
 .local-experiences {
-  display: grid; grid-template-columns: 1.2fr 1fr;
-  min-height: 80vh;
+  background: var(--forest);
+  padding: 8rem 5rem;
 }
-.local-exp-visual { position: relative; overflow: hidden; }
-.local-exp-visual img { width: 100%; height: 100%; object-fit: cover; }
-.local-exp-overlay { position: absolute; inset: 0; background: rgba(13,26,15,0.2); }
-.local-exp-content {
-  background: var(--forest); padding: 7rem 5rem;
-  display: flex; flex-direction: column; justify-content: center;
+.local-exp-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.local-exp-header {
+  text-align: center;
+  margin-bottom: 5rem;
 }
 .local-exp-body {
-  font-size: 0.95rem; font-weight: 300; line-height: 1.85;
-  color: rgba(245,240,232,0.68); max-width: 440px; margin: 1.5rem 0 3rem;
+  font-size: 1rem; font-weight: 300; line-height: 1.85;
+  color: rgba(245,240,232,0.6); max-width: 600px; 
+  margin: 1.5rem auto 0;
 }
-.exp-list { list-style: none; display: flex; flex-direction: column; gap: 2.2rem; }
-.exp-list li { display: flex; align-items: flex-start; gap: 1rem; }
-.exp-icon { color: var(--gold); margin-top: 3px; font-size: 0.8rem; }
-.exp-list h4 { font-size: 0.9rem; font-weight: 500; color: var(--cream); margin-bottom: 0.4rem; letter-spacing: 0.05em; }
-.exp-list p { font-size: 0.8rem; font-weight: 300; line-height: 1.6; color: rgba(245,240,232,0.5); }
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.activity-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.4s ease, background 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.activity-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(201, 169, 110, 0.3);
+}
+.activity-card-img {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.activity-card-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, var(--forest) 0%, transparent 100%);
+  opacity: 0.4;
+}
+.activity-card-body {
+  padding: 2.2rem 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.activity-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 400; color: var(--gold);
+  line-height: 1.2; margin-bottom: 1rem;
+}
+.activity-card-desc {
+  font-size: 0.82rem; font-weight: 300; line-height: 1.7;
+  color: rgba(245, 240, 232, 0.5);
+}
 
 /* LOGISTICS */
 .logistics {
-  background: var(--warm-white); padding: 7rem 5rem;
-  display: flex; justify-content: center;
+  background: var(--cream);
+  padding: 8rem 5rem;
 }
 .logistics-inner {
-  max-width: 900px; width: 100%;
-  display: grid; grid-template-columns: 2fr 1fr; gap: 4rem;
-  background: white; padding: 4rem;
-  border: 1px solid rgba(46,77,48,0.1);
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  background: white;
+  box-shadow: 0 20px 60px rgba(13,26,15,0.06);
+  border: 2.5rem solid white;
+  gap: 3.5rem;
 }
 .logistics-text h2 { margin-bottom: 1.5rem; }
-.logistics-body { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #3a3a3a; margin-bottom: 2.5rem; }
-.logistics-info { display: flex; flex-direction: column; gap: 1.5rem; }
-.logistics-info p { font-size: 0.85rem; font-weight: 300; line-height: 1.7; color: var(--text); }
-.logistics-info strong { font-weight: 500; color: var(--deep); }
-.logistics-cta {
-  background: var(--deep); padding: 2.5rem;
-  display: flex; flex-direction: column; justify-content: center; text-align: center;
-  align-items: center;
+.logistics-body {
+  font-size: 0.92rem; font-weight: 300; line-height: 1.75;
+  color: var(--text); margin-bottom: 2.5rem;
 }
-.logistics-cta p { font-size: 0.85rem; font-weight: 300; line-height: 1.6; color: var(--cream); margin-bottom: 1.5rem; }
+
+.logistics-options { display: flex; flex-direction: column; gap: 1.8rem; margin-bottom: 2.5rem; }
+.log-opt { display: flex; align-items: flex-start; gap: 1.5rem; }
+.log-opt-icon {
+  font-size: 1.1rem; min-width: 44px; height: 44px;
+  background: var(--cream); display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; opacity: 0.8;
+}
+.log-opt-text strong {
+  display: block; font-size: 0.88rem; font-weight: 500; color: var(--deep);
+  margin-bottom: 0.4rem; letter-spacing: 0.02em;
+}
+.log-opt-text p {
+  font-size: 0.78rem; font-weight: 300; line-height: 1.6; color: var(--muted);
+}
+
+.logistics-footer {
+  border-top: 1px solid rgba(46,77,48,0.08);
+  padding-top: 2.5rem;
+}
+.logistics-footer p {
+  font-size: 0.85rem; font-weight: 300; color: var(--muted);
+  margin-bottom: 1.5rem; font-style: italic;
+}
+
+.logistics-visual {
+  height: 100%; min-height: 500px;
+  position: relative; overflow: hidden;
+}
+.logistics-visual img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1.2s ease;
+}
+.logistics-visual:hover img { transform: scale(1.05); }
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .explore-intro { padding: 4rem 2.5rem 2rem; }
   .attractions-full { padding: 2rem 2.5rem 6rem; }
   .attractions-grid { grid-template-columns: 1fr 1fr; }
-  .local-experiences { grid-template-columns: 1fr; }
-  .local-exp-visual { min-height: 400px; order: 2; }
-  .local-exp-content { padding: 5rem 3rem; order: 1; }
-  .logistics { padding: 5rem 2.5rem; }
-  .logistics-inner { grid-template-columns: 1fr; gap: 3rem; padding: 3rem; }
+  .local-experiences { padding: 5rem 2.5rem; }
+  .activity-grid { grid-template-columns: 1fr 1fr; }
+  .local-exp-header { margin-bottom: 3rem; }
+  .logistics { padding: 6rem 1.5rem; }
+  .logistics-inner { grid-template-columns: 1fr; border: 2rem solid white; padding: 0; gap: 3.5rem; }
+  .logistics-text { padding: 2rem; }
+  .logistics-visual { min-height: 320px; order: 2; }
+  .logistics-text { order: 1; }
 }
 
 @media (max-width: 600px) {
-  .attractions-grid { grid-template-columns: 1fr; }
-  .logistics-inner { padding: 2rem; }
+  .activity-grid { grid-template-columns: 1fr; }
   .local-exp-content { padding: 4rem 2rem; }
 }
