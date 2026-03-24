@@ -21,7 +21,7 @@
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
 }
 .attraction-card {
-  background: white; overflow: hidden;
+  background: var(--warm-white); overflow: hidden;
   box-shadow: 0 4px 20px rgba(13,26,15,0.03);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

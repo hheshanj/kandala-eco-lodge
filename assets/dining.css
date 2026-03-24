@@ -36,9 +36,9 @@
 .menu-card-category { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
 .menu-card-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.45rem; font-weight: 400; color: var(--deep); line-height: 1.2; margin-bottom: 0.8rem;
+  font-size: 1.8rem; font-weight: 300; color: var(--deep); line-height: 1.2; margin-bottom: 0.8rem;
 }
-.menu-card-desc { font-size: 0.8rem; font-weight: 300; line-height: 1.6; color: var(--muted); }
+.menu-card-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.6; color: var(--muted); }
 
 /* COOK STORY */
 .cook-story {

@@ -126,16 +126,17 @@ nav.nav-solid {
 
 /* ── MOBILE MENU DRAWER ── */
 .nav-drawer {
-  display: none;
-  position: fixed; inset: 0; z-index: 99;
-  background: rgba(13,26,15,0.97);
-  flex-direction: column; align-items: center; justify-content: center;
-  gap: 2.5rem;
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.35s ease;
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 99;
+  background: rgba(13,26,15,0.98);
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  gap: 2rem;
+  padding-top: 7rem; padding-bottom: 4rem;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  overflow-y: auto; /* Fixes cutoff links on small screens */
 }
 .nav-drawer.open {
-  opacity: 1; pointer-events: all;
+  opacity: 1; visibility: visible; pointer-events: all;
 }
 .nav-drawer a {
   font-family: 'Cormorant Garamond', serif;
@@ -173,7 +174,7 @@ nav.nav-solid {
 .page-hero:hover .page-hero-bg { transform: scale(1.04); }
 .page-hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(13,26,15,0.95) 0%, rgba(13,26,15,0.3) 60%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(13,26,15,0.7) 0%, rgba(13,26,15,0.2) 20%, transparent 40%, rgba(13,26,15,0.85) 100%);
 }
 .page-hero-content {
   position: relative; z-index: 2;
@@ -188,7 +189,7 @@ nav.nav-solid {
   font-size: clamp(2.4rem, 4.5vw, 4rem);
   font-weight: 300; line-height: 1.05; color: var(--cream);
 }
-.page-hero-title em { font-style: italic; color: var(--gold-light); }
+.page-hero-title em { font-style: italic; color: var(--gold); }
 
 /* ══════════════════════════════════════
    SECTION GENERIC
@@ -196,21 +197,21 @@ nav.nav-solid {
 section { position: relative; }
 
 .section-label {
-  font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase;
-  color: var(--sage); margin-bottom: 1rem;
-  display: block;
+  font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--moss); margin-bottom: 1rem;
+  display: block; font-weight: 500;
 }
 .section-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.2rem, 3.8vw, 3.6rem);
   font-weight: 300; line-height: 1.1; color: var(--deep);
 }
-.section-title em { font-style: italic; color: var(--moss); }
+.section-title em { font-style: italic; color: var(--gold); }
 
 /* Light bg variants */
-.on-dark .section-label  { color: var(--gold); opacity: 0.75; }
-.on-dark .section-title  { color: var(--cream); }
-.on-dark .section-title em { color: var(--gold-light); }
+.section-label.on-dark, .on-dark .section-label { color: var(--gold); opacity: 0.9; }
+.section-title.on-dark, .on-dark .section-title { color: var(--cream); }
+.section-title.on-dark em, .on-dark .section-title em { color: var(--gold); }
 
 /* ── BUTTONS ── */
 .btn-primary {
@@ -282,7 +283,6 @@ footer {
   padding: 5rem;
   display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
 }
-.footer-brand { }
 .footer-logo {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem; font-weight: 300; letter-spacing: 0.1em;
@@ -363,7 +363,6 @@ footer {
   .nav-links { display: none; }
   .nav-book  { display: none; }
   .nav-hamburger { display: flex; }
-  .nav-drawer { display: flex; }
 
   .page-hero-content { padding: 0 2.5rem 3.5rem; }
 
