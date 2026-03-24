@@ -77,7 +77,7 @@
     .hero-bg {
       position: absolute; inset: 0;
       opacity: 0.5;
-      background: url('hero.jpeg') center/cover no-repeat;
+      background: url('/assets/images/hero.jpeg')
     }
     .hero-overlay {
       position: absolute; inset: 0;

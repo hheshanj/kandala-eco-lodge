@@ -10,8 +10,8 @@
 }
 .hero-bg {
   position: absolute; inset: 0;
-  opacity: 0.52;
-  background: url('assets/hero.jpeg') center/cover no-repeat;
+  opacity: 0.1;
+  background: url('/assets/images/hero.jpeg') center/cover no-repeat;
 }
 .hero-overlay {
   position: absolute; inset: 0;
