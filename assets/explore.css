@@ -1,0 +1,264 @@
+/* ── EXPLORE PAGE — page-specific styles ── */
+
+/* INTRO */
+.explore-intro {
+  background: var(--cream); padding: 5rem 5rem 3rem;
+}
+.explore-intro-inner {
+  max-width: 740px; margin: 0 auto; text-align: center;
+}
+.explore-intro-title { margin: 0.8rem 0 1.5rem; }
+.explore-intro-body {
+  font-size: 1.05rem; font-weight: 300; line-height: 1.85;
+  color: #3a3a3a; margin-top: 1rem;
+}
+
+/* ATTRACTIONS */
+.attractions-full {
+  padding: 4rem 5rem 8rem;
+  background: var(--cream);
+}
+.attractions-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.attraction-card {
+  background: var(--warm-white); overflow: hidden;
+  box-shadow: 0 4px 20px rgba(13,26,15,0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.attraction-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(13,26,15,0.06); }
+.attraction-img {
+  height: 240px; background-size: cover; background-position: center;
+}
+.attraction-info { padding: 2rem 1.8rem; }
+.attraction-dist {
+  display: inline-block;
+  font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--deep); background: var(--gold-light);
+  padding: 0.3rem 0.8rem; border-radius: 20px;
+  margin-bottom: 1.2rem;
+}
+.attraction-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 400; color: var(--deep); line-height: 1.2; margin-bottom: 0.8rem;
+}
+.attraction-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.6; color: var(--text); margin-bottom: 1.2rem; }
+.attraction-tip { font-size: 0.75rem; font-weight: 300; color: var(--sage); font-style: italic; }
+
+/* LOCAL EXPERIENCES */
+.local-experiences {
+  background: var(--forest);
+  padding: 8rem 5rem;
+}
+.local-exp-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.local-exp-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.local-exp-body {
+  font-size: 1rem; font-weight: 300; line-height: 1.85;
+  color: rgba(245,240,232,0.6); max-width: 600px; 
+  margin: 1.5rem auto 0;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3rem 2rem;
+  align-items: start;
+}
+.activity-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), background 0.4s ease, border-color 0.4s ease;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.activity-card:nth-child(1) { grid-column: 1 / 8; }
+.activity-card:nth-child(2) { grid-column: 8 / 13; margin-top: 8rem; }
+.activity-card:nth-child(3) { grid-column: 2 / 7; margin-top: -4rem; }
+.activity-card:nth-child(4) { grid-column: 7 / 13; margin-top: 2rem; }
+
+.activity-card:hover {
+  transform: translateY(-12px) scale(1.01);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(201, 169, 110, 0.3);
+}
+.activity-card-img {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.activity-card-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, var(--forest) 0%, transparent 100%);
+  opacity: 0.4;
+}
+.activity-card-body {
+  padding: 2.2rem 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.activity-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 400; color: var(--gold);
+  line-height: 1.2; margin-bottom: 1rem;
+}
+.activity-card-desc {
+  font-size: 0.82rem; font-weight: 300; line-height: 1.7;
+  color: rgba(245, 240, 232, 0.5);
+}
+
+/* LOGISTICS */
+.logistics {
+  background: var(--cream);
+  padding: 8rem 5rem;
+}
+.logistics-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr;
+  align-items: center;
+  background: white;
+  box-shadow: 0 20px 60px rgba(13,26,15,0.06);
+  border: 2.5rem solid white;
+  gap: 2.5rem;
+}
+.logistics-text h2 { margin-bottom: 1.5rem; }
+.logistics-body {
+  font-size: 0.92rem; font-weight: 300; line-height: 1.75;
+  color: var(--text); margin-bottom: 1.5rem;
+}
+
+.logistics-options { display: flex; flex-direction: column; gap: 1.8rem; margin-bottom: 2.5rem; }
+.log-opt { display: flex; align-items: flex-start; gap: 1.5rem; }
+.log-opt-icon {
+  font-size: 1.1rem; min-width: 44px; height: 44px;
+  background: var(--cream); display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; opacity: 0.8;
+}
+.log-opt-text strong {
+  display: block; font-size: 0.88rem; font-weight: 500; color: var(--deep);
+  margin-bottom: 0.4rem; letter-spacing: 0.02em;
+}
+.log-opt-text p {
+  font-size: 0.78rem; font-weight: 300; line-height: 1.6; color: var(--muted);
+}
+
+.logistics-footer {
+  border-top: 1px solid rgba(46,77,48,0.08);
+  padding-top: 1rem;
+}
+.logistics-footer p {
+  font-size: 0.85rem; font-weight: 300; color: var(--muted);
+  margin-bottom: 1.5rem; font-style: italic;
+}
+
+.logistics-visual {
+  height: 100%; min-height: 500px;
+  position: relative; overflow: hidden;
+}
+.logistics-visual img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1.2s ease;
+}
+.logistics-visual:hover img { transform: scale(1.05); }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .explore-intro { padding: 4rem 2.5rem 2rem; }
+  .attractions-full { padding: 2rem 2.5rem 6rem; }
+  .attractions-grid { grid-template-columns: 1fr 1fr; }
+  .local-experiences { padding: 5rem 2.5rem; }
+  .activity-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem;
+  }
+  .activity-card:nth-child(n) { grid-column: auto; margin-top: 0; }
+  .activity-card:nth-child(even) { margin-top: 3rem; }
+  .local-exp-header { margin-bottom: 4rem; }
+  .logistics { padding: 6rem 1.5rem; }
+  .logistics-inner { grid-template-columns: 1fr; border: 2rem solid white; padding: 0; gap: 3.5rem; }
+  .logistics-text { padding: 2rem; }
+  .logistics-visual { min-height: 320px; order: 2; }
+  .logistics-text { order: 1; }
+}
+
+@media (max-width: 768px) {
+  .explore-intro { padding: 3rem 1.5rem 1.5rem; }
+  .explore-intro-body { font-size: 0.9rem; }
+  .attractions-full { padding: 1.5rem 1.5rem 4rem; }
+  .attractions-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .attraction-card { padding: 0; }
+  .attraction-img { height: 180px; }
+  .attraction-info { padding: 1.25rem; }
+  .attraction-dist { font-size: 0.52rem; padding: 0.25rem 0.6rem; margin-bottom: 0.8rem; }
+  .attraction-name { font-size: 1.25rem; margin-bottom: 0.5rem; }
+  .attraction-desc { font-size: 0.78rem; margin-bottom: 0.8rem; }
+  .attraction-tip { font-size: 0.7rem; }
+  .local-experiences { padding: 4rem 1.5rem; }
+  .local-exp-header { margin-bottom: 2rem; }
+  .local-exp-body { font-size: 0.9rem; }
+  .activity-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .activity-card:nth-child(n) { margin-top: 0; }
+  .activity-card-img { height: 160px; }
+  .activity-card-body { padding: 1.25rem; }
+  .activity-card-title { font-size: 1.1rem; margin-bottom: 0.6rem; }
+  .activity-card-desc { font-size: 0.75rem; }
+  .logistics { padding: 4rem 1rem; }
+  .logistics-inner { border: 1.5rem solid white; gap: 2rem; }
+  .logistics-text { padding: 1.5rem; }
+  .logistics-visual { min-height: 260px; }
+  .logistics-body { font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .logistics-options { gap: 1.25rem; margin-bottom: 1.5rem; }
+  .log-opt { gap: 1rem; }
+  .log-opt-icon { min-width: 36px; height: 36px; font-size: 0.95rem; }
+  .log-opt-text strong { font-size: 0.82rem; }
+  .log-opt-text p { font-size: 0.72rem; }
+}
+
+@media (max-width: 480px) {
+  .explore-intro { padding: 2.5rem 1rem 1rem; }
+  .explore-intro-inner { max-width: 100%; }
+  .explore-intro-body { font-size: 0.85rem; margin-top: 0.75rem; }
+  .section-label { font-size: 0.55rem; }
+  .section-title { font-size: 1.6rem; }
+  .attractions-full { padding: 1rem 1rem 3rem; }
+  .attractions-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .attraction-img { height: 200px; }
+  .attraction-info { padding: 1.25rem; }
+  .attraction-dist { font-size: 0.5rem; }
+  .attraction-name { font-size: 1.1rem; }
+  .attraction-desc { font-size: 0.75rem; line-height: 1.5; }
+  .attraction-tip { font-size: 0.68rem; }
+  .local-experiences { padding: 3rem 1rem; }
+  .local-exp-header { margin-bottom: 1.5rem; }
+  .local-exp-body { font-size: 0.85rem; }
+  .activity-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .activity-card-img { height: 180px; }
+  .activity-card-body { padding: 1.5rem; }
+  .activity-card-title { font-size: 1.15rem; }
+  .activity-card-desc { font-size: 0.78rem; }
+  .logistics { padding: 3rem 0.75rem; }
+  .logistics-inner { border: 1rem solid white; gap: 1.5rem; }
+  .logistics-text { padding: 1rem; }
+  .logistics-visual { min-height: 220px; }
+  .logistics-text h2 { margin-bottom: 1rem; }
+  .logistics-body { font-size: 0.8rem; margin-bottom: 1.25rem; }
+  .logistics-options { gap: 1rem; margin-bottom: 1.25rem; }
+  .log-opt { gap: 0.75rem; }
+  .log-opt-icon { min-width: 32px; height: 32px; font-size: 0.85rem; }
+  .log-opt-text strong { font-size: 0.78rem; }
+  .log-opt-text p { font-size: 0.7rem; line-height: 1.5; }
+  .logistics-footer { padding-top: 1.5rem; }
+  .logistics-footer p { font-size: 0.78rem; margin-bottom: 1rem; }
+}

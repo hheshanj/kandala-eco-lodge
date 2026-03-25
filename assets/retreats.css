@@ -1,0 +1,193 @@
+/* ── RETREATS & RESIDENCIES PAGE — page-specific styles ── */
+
+/* INTRO */
+.retreats-intro {
+  background: var(--cream); padding: 6rem 5rem;
+}
+.retreats-intro-inner {
+  max-width: 780px; margin: 0 auto; text-align: center;
+}
+.retreats-intro-title { margin: 0.8rem 0 1.5rem; }
+.retreats-intro-body {
+  font-size: 1.05rem; font-weight: 300; line-height: 1.85;
+  color: #3a3a3a;
+}
+
+/* WELLNESS SECTION */
+.wellness-section {
+  display: grid; grid-template-columns: 1fr 1.15fr;
+  min-height: 75vh;
+}
+.wellness-visual { position: relative; overflow: hidden; }
+.wellness-visual img { width: 100%; height: 100%; object-fit: cover; }
+.wellness-visual-overlay { position: absolute; inset: 0; background: rgba(13,26,15,0.15); }
+.wellness-content {
+  background: var(--warm-white); padding: 7rem 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.wellness-body {
+  font-size: 0.95rem; font-weight: 300; line-height: 1.85;
+  color: #3a3a3a; max-width: 460px; margin: 1.8rem 0 2.5rem;
+}
+.wellness-list { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
+.wellness-list li {
+  display: flex; align-items: center; gap: 0.8rem;
+  font-size: 0.82rem; font-weight: 300; color: var(--text); border-bottom: 1px solid rgba(46,77,48,0.08); padding-bottom: 0.8rem;
+}
+.wellness-list span { color: var(--gold); font-size: 0.65rem; }
+
+/* SIGNATURE RESIDENCIES */
+.residencies {
+  padding: 10rem 5rem;
+  background: var(--deep);
+}
+.residencies-header { text-align: center; margin-bottom: 6rem; }
+.residencies-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  max-width: 1300px; margin: 0 auto;
+}
+.residency-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 4.5rem 3rem;
+  transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+  position: relative;
+  display: flex; flex-direction: column;
+}
+.residency-card:hover { 
+  transform: translateY(-8px);
+  border-color: rgba(201, 169, 110, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Featured card highlight */
+.residency-card--featured {
+  background: rgba(46, 77, 48, 0.2);
+  border-color: rgba(201, 169, 110, 0.2);
+}
+
+.residency-badge {
+  font-size: 0.65rem; color: var(--gold);
+  letter-spacing: 0.3em; margin-bottom: 1.8rem;
+  font-weight: 500; opacity: 0.6;
+}
+.residency-badge--featured {
+  background: var(--gold); color: var(--deep);
+  display: inline-block; padding: 0.25rem 0.8rem;
+  letter-spacing: 0.15em; border-radius: 2px; opacity: 1;
+}
+
+.residency-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; font-weight: 300; color: var(--cream);
+  line-height: 1.2; margin-bottom: 1.2rem;
+}
+.residency-desc {
+  font-size: 0.88rem; font-weight: 300; line-height: 1.75;
+  color: rgba(245, 240, 232, 0.5); margin-bottom: 2.2rem;
+}
+
+.residency-divider {
+  width: 30px; height: 1px; background: var(--gold);
+  opacity: 0.3; margin-bottom: 2.2rem;
+}
+
+.residency-features {
+  list-style: none; display: flex; flex-direction: column; gap: 1rem;
+  margin-top: auto;
+}
+.residency-features li {
+  font-size: 0.75rem; font-weight: 300; color: rgba(245, 240, 232, 0.45);
+  display: flex; align-items: flex-start; gap: 0.8rem;
+}
+.residency-features span { color: var(--gold); font-size: 0.6rem; margin-top: 3px; }
+
+/* CORPORATE & GROUPS */
+.corporate-retreat {
+  background: var(--forest);
+  padding: 7rem 5rem;
+  position: relative; overflow: hidden;
+  text-align: center;
+}
+.corporate-header { max-width: 600px; margin: 0 auto; }
+.corporate-body {
+  font-size: 0.95rem; font-weight: 300; line-height: 1.8;
+  color: rgba(245,240,232,0.7); margin: 1.5rem 0 3rem;
+}
+.corporate-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto 3.5rem;
+}
+.corp-item {
+  border-top: 1px solid rgba(201,169,110,0.3); padding-top: 1.5rem; text-align: left;
+}
+.corp-item h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--cream); margin-bottom: 0.8rem; }
+.corp-item p { font-size: 0.8rem; font-weight: 300; line-height: 1.6; color: rgba(245,240,232,0.5); }
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .retreats-intro { padding: 4rem 2.5rem; }
+  .wellness-section { grid-template-columns: 1fr; }
+  .wellness-visual { min-height: 400px; order: 2; }
+  .wellness-content { padding: 4rem 3rem; order: 1; }
+  .residencies { padding: 6rem 2.5rem; }
+  .residencies-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .residency-card { padding: 4rem 2.5rem; }
+  .corporate-retreat { padding: 5rem 2.5rem; }
+  .corporate-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+@media (max-width: 768px) {
+  .retreats-intro { padding: 3rem 1.5rem; }
+  .retreats-intro-body { font-size: 0.9rem; }
+  .wellness-section { min-height: auto; }
+  .wellness-visual { min-height: 320px; }
+  .wellness-content { padding: 3rem 1.5rem; }
+  .wellness-body { font-size: 0.9rem; margin: 1.25rem 0 1.5rem; }
+  .wellness-list { gap: 0.85rem; }
+  .wellness-list li { font-size: 0.78rem; padding-bottom: 0.6rem; }
+  .residencies { padding: 4.5rem 1.5rem; }
+  .residencies-header { margin-bottom: 3.5rem; }
+  .residencies-grid { gap: 1rem; }
+  .residency-card { padding: 2.5rem 1.5rem; }
+  .residency-badge { font-size: 0.58rem; margin-bottom: 1.25rem; }
+  .residency-name { font-size: 1.5rem; margin-bottom: 0.85rem; }
+  .residency-desc { font-size: 0.82rem; margin-bottom: 1.5rem; }
+  .residency-features { gap: 0.75rem; }
+  .residency-features li { font-size: 0.7rem; }
+  .corporate-retreat { padding: 4rem 1.5rem; }
+  .corporate-header { max-width: 100%; }
+  .corporate-body { font-size: 0.9rem; margin: 1rem 0 2rem; }
+  .corporate-grid { margin-bottom: 2.5rem; }
+  .corp-item { padding-top: 1rem; }
+  .corp-item h4 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .corp-item p { font-size: 0.78rem; }
+}
+
+@media (max-width: 480px) {
+  .retreats-intro { padding: 2.5rem 1rem; }
+  .retreats-intro-body { font-size: 0.85rem; }
+  .section-label { font-size: 0.55rem; }
+  .section-title { font-size: 1.6rem; }
+  .wellness-visual { min-height: 240px; }
+  .wellness-content { padding: 2.5rem 1rem; }
+  .wellness-body { font-size: 0.85rem; margin: 1rem 0 1.25rem; }
+  .wellness-list { gap: 0.7rem; }
+  .wellness-list li { font-size: 0.75rem; }
+  .btn-primary { font-size: 0.68rem; padding: 0.85rem 1.5rem; }
+  .btn-outline-gold { font-size: 0.62rem; padding: 0.65rem 1.25rem; }
+  .residencies { padding: 3.5rem 1rem; }
+  .residencies-header { margin-bottom: 2.5rem; }
+  .residency-card { padding: 2rem 1rem; }
+  .residency-badge { font-size: 0.55rem; margin-bottom: 1rem; }
+  .residency-name { font-size: 1.3rem; margin-bottom: 0.7rem; }
+  .residency-desc { font-size: 0.8rem; line-height: 1.6; margin-bottom: 1.25rem; }
+  .residency-divider { margin-bottom: 1.25rem; }
+  .residency-features { gap: 0.6rem; }
+  .residency-features li { font-size: 0.68rem; }
+  .corporate-retreat { padding: 3rem 1rem; }
+  .corporate-body { font-size: 0.85rem; margin: 1rem 0 1.5rem; }
+  .corporate-grid { gap: 1.25rem; margin-bottom: 2rem; }
+  .corp-item h4 { font-size: 1.05rem; }
+  .corp-item p { font-size: 0.75rem; }
+}

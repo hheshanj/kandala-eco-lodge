@@ -1,0 +1,134 @@
+/* ── DINING PAGE — page-specific styles ── */
+
+/* INTRO */
+.dining-intro {
+  background: var(--cream); padding: 6rem 5rem;
+}
+.dining-intro-inner {
+  max-width: 740px; margin: 0 auto; text-align: center;
+}
+.dining-intro-title { margin: 0.8rem 0 1.5rem; }
+.dining-intro-body {
+  font-size: 1.05rem; font-weight: 300; line-height: 1.85;
+  color: #3a3a3a;
+}
+
+/* MENU GRID */
+.menu-section {
+  padding: 8rem 5rem;
+  background: var(--warm-white);
+}
+.menu-header { text-align: center; margin-bottom: 4.5rem; }
+.menu-header .section-label { display: flex; justify-content: center; }
+.menu-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.menu-card {
+  background: white; border: 1px solid rgba(46,77,48,0.08);
+  overflow: hidden; text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.menu-card:hover { transform: translateY(-4px); border-color: rgba(201,169,110,0.4); }
+.menu-card-img {
+  height: 220px; background-size: cover; background-position: center;
+}
+.menu-card-body { padding: 2.2rem 1.8rem; }
+.menu-card-category { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+.menu-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; font-weight: 300; color: var(--deep); line-height: 1.2; margin-bottom: 0.8rem;
+}
+.menu-card-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.6; color: var(--muted); }
+
+/* COOK STORY */
+.cook-story {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 75vh;
+}
+.cook-story-visual { position: relative; overflow: hidden; }
+.cook-story-visual img { width: 100%; height: 100%; object-fit: cover; }
+.cook-story-overlay { position: absolute; inset: 0; background: rgba(13,26,15,0.25); }
+.cook-story-content {
+  background: var(--deep); padding: 7rem 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.cook-story-body {
+  font-size: 0.95rem; font-weight: 300; line-height: 1.85;
+  color: rgba(245,240,232,0.68); max-width: 440px; margin: 1.8rem 0 2.5rem;
+}
+.cook-values { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+.cook-values li {
+  display: flex; align-items: center; gap: 0.8rem;
+  font-size: 0.82rem; font-weight: 300; color: rgba(245,240,232,0.85);
+}
+.cook-values span { color: var(--gold); font-size: 0.6rem; }
+
+/* DINING NOTE (CTA) */
+.dining-note {
+  background: var(--cream); padding: 7rem 5rem;
+  text-align: center; border-bottom: 1px solid rgba(46,77,48,0.08);
+}
+.dining-note-inner { max-width: 600px; margin: 0 auto; }
+.dining-note-eyebrow { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); margin-bottom: 1rem; }
+.dining-note-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--deep); margin-bottom: 1rem;
+}
+.dining-note-body { font-size: 0.95rem; font-weight: 300; line-height: 1.7; color: #3a3a3a; margin-bottom: 2.5rem; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .dining-intro { padding: 4rem 2.5rem; }
+  .menu-section { padding: 5rem 2.5rem; }
+  .menu-grid { grid-template-columns: 1fr 1fr; }
+  .cook-story { grid-template-columns: 1fr; }
+  .cook-story-visual { min-height: 380px; }
+  .cook-story-content { padding: 4rem 3rem; }
+  .dining-note { padding: 5rem 2.5rem; }
+}
+
+@media (max-width: 768px) {
+  .dining-intro { padding: 3rem 1.5rem; }
+  .dining-intro-body { font-size: 0.9rem; }
+  .menu-section { padding: 4rem 1.5rem; }
+  .menu-header { margin-bottom: 3rem; }
+  .menu-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .menu-card-img { height: 160px; }
+  .menu-card-body { padding: 1.5rem 1rem; }
+  .menu-card-category { font-size: 0.55rem; margin-bottom: 0.5rem; }
+  .menu-card-name { font-size: 1.35rem; margin-bottom: 0.5rem; }
+  .menu-card-desc { font-size: 0.78rem; }
+  .cook-story { min-height: auto; }
+  .cook-story-visual { min-height: 300px; }
+  .cook-story-content { padding: 3rem 1.5rem; }
+  .cook-story-body { font-size: 0.9rem; margin: 1.25rem 0 1.5rem; }
+  .cook-values { gap: 0.6rem; }
+  .cook-values li { font-size: 0.78rem; }
+  .dining-note { padding: 4rem 1.5rem; }
+  .dining-note-title { font-size: 1.8rem; }
+  .dining-note-body { font-size: 0.85rem; }
+}
+
+@media (max-width: 480px) {
+  .dining-intro { padding: 2.5rem 1rem; }
+  .dining-intro-body { font-size: 0.85rem; }
+  .section-label { font-size: 0.55rem; }
+  .section-title { font-size: 1.6rem; }
+  .menu-section { padding: 3rem 1rem; }
+  .menu-header { margin-bottom: 2rem; }
+  .menu-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .menu-card-img { height: 180px; }
+  .menu-card-body { padding: 1.5rem; }
+  .menu-card-category { font-size: 0.52rem; }
+  .menu-card-name { font-size: 1.2rem; }
+  .menu-card-desc { font-size: 0.75rem; }
+  .cook-story-visual { min-height: 240px; }
+  .cook-story-content { padding: 2.5rem 1rem; }
+  .cook-story-body { font-size: 0.85rem; }
+  .cook-values { gap: 0.5rem; }
+  .cook-values li { font-size: 0.75rem; }
+  .dining-note { padding: 3rem 1rem; }
+  .dining-note-eyebrow { font-size: 0.58rem; }
+  .dining-note-title { font-size: 1.5rem; }
+  .dining-note-body { font-size: 0.8rem; margin-bottom: 2rem; }
+  .btn-primary { font-size: 0.68rem; padding: 0.85rem 1.5rem; }
+}

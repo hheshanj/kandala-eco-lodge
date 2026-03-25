@@ -1,0 +1,386 @@
+/* ── HOME PAGE — page-specific styles ── */
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  height: 100vh; min-height: 700px;
+  display: flex; align-items: flex-end;
+  background-color: #0d1a0f;
+  overflow: hidden;
+  padding-top: 140px; /* Ensures content clears fixed nav */
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  opacity: 0.1;
+  background: url('/assets/images/hero.jpeg') center/cover no-repeat;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(13,26,15,0.7) 0%, rgba(13,26,15,0.15) 20%, transparent 40%, rgba(13,26,15,0.92) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 180px 6rem 7rem;
+  max-width: 800px;
+}
+.hero-eyebrow {
+  font-size: 0.7rem; font-weight: 400; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 1.2rem;
+  opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.2rem, 6vw, 5.5rem);
+  font-weight: 300; line-height: 1.05; color: var(--cream);
+  margin-bottom: 1.5rem;
+  opacity: 0; animation: fadeUp 0.9s 0.4s forwards;
+}
+.hero-title em { font-style: italic; color: var(--gold-light); }
+.hero-sub {
+  font-size: 0.9rem; font-weight: 300; line-height: 1.8;
+  color: rgba(245,240,232,0.72); max-width: 480px;
+  margin-bottom: 2.5rem;
+  opacity: 0; animation: fadeUp 0.9s 0.6s forwards;
+}
+.hero-ctas {
+  display: flex; gap: 1.2rem; align-items: center;
+  opacity: 0; animation: fadeUp 0.9s 0.8s forwards;
+}
+.hero-scroll {
+  position: absolute; bottom: 2.5rem; right: 5rem; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+  opacity: 0; animation: fadeIn 1s 1.2s forwards;
+}
+.hero-scroll span {
+  font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(245,240,232,0.45); writing-mode: vertical-rl;
+}
+.scroll-line {
+  width: 1px; height: 50px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* ── ABOUT ── */
+.about {
+  display: grid; grid-template-columns: 45fr 55fr;
+  min-height: 90vh;
+}
+.about-visual { position: relative; overflow: hidden; }
+.about-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 8s ease; }
+.about-visual:hover img { transform: scale(1.04); }
+.about-badge {
+  position: absolute; bottom: 3rem; right: -1px;
+  background: var(--gold); padding: 2rem 2.5rem;
+  font-family: 'Cormorant Garamond', serif; text-align: center;
+}
+.about-badge .num { font-size: 3rem; font-weight: 300; line-height: 1; color: var(--deep); display: block; }
+.about-badge .lbl { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--deep); opacity: 0.7; display: block; margin-top: 0.3rem; }
+.about-text {
+  background: var(--cream); padding: 7rem 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.about-body { font-size: 1rem; font-weight: 300; line-height: 1.85; color: #3a3a3a; margin: 1.8rem 0 2.5rem; max-width: 460px; }
+.about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem; }
+.highlight-item { display: flex; align-items: flex-start; gap: 0.7rem; }
+.highlight-icon { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; color: var(--gold); }
+.highlight-item p { font-size: 0.82rem; font-weight: 300; line-height: 1.5; color: var(--muted); }
+
+/* ── ROOMS TEASER ── */
+.rooms-teaser {
+  padding: 8rem 5rem;
+  background: var(--warm-white);
+}
+.rooms-teaser-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 3rem;
+}
+.rooms-teaser-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.room-card {
+  position: relative; overflow: hidden; cursor: pointer;
+  background: var(--deep); display: block; text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.room-card:active { transform: scale(0.98); }
+.room-card-img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block;
+  transition: transform 0.7s ease, opacity 0.4s ease;
+  opacity: 0.88;
+}
+.room-card:hover .room-card-img { transform: scale(1.06); opacity: 0.72; }
+.room-card-info {
+  position: absolute; top: 0; left: 0; right: 0;
+  padding: 4rem 2.8rem;
+  background: linear-gradient(to bottom, rgba(13,26,15,0.85) 0%, transparent 100%);
+  transition: transform 0.5s ease, opacity 0.4s ease;
+  opacity: 0.9;
+}
+.room-card:hover .room-card-info { opacity: 1; transform: translateY(4px); }
+.room-card-type { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+.room-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 300; color: var(--cream); line-height: 1.1; margin-bottom: 1rem;
+}
+.room-card-hook {
+  font-size: 0.78rem; font-weight: 300; line-height: 1.6;
+  color: rgba(245,240,232,0.65);
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+}
+.room-card:hover .room-card-hook { max-height: 80px; }
+.room-card-cta {
+  display: inline-flex; align-items: center;
+  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); margin-top: 0.7rem;
+  opacity: 0; transition: opacity 0.3s 0.1s;
+}
+.room-card:hover .room-card-cta { opacity: 1; }
+
+/* ── RETREATS TEASER ── */
+.retreats-teaser {
+  padding: 10rem 5rem;
+  background: var(--cream);
+  display: grid; grid-template-columns: 55fr 45fr; gap: 6rem; align-items: center;
+}
+.retreats-teaser-body {
+  font-size: 1rem; font-weight: 300; line-height: 1.8;
+  color: var(--text); max-width: 440px; margin: 1.5rem 0 2.5rem;
+}
+.retreats-teaser-img {
+  position: relative; overflow: hidden; max-height: 500px;
+}
+.retreats-teaser-img img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+/* ── DINING TEASER ── */
+.dining-teaser {
+  display: grid; grid-template-columns: 55fr 45fr;
+  min-height: 75vh;
+}
+.dining-teaser-visual { position: relative; overflow: hidden; order: 2; }
+.dining-teaser-visual img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.1); }
+.dining-teaser-overlay {
+  position: absolute; inset: 0;
+  background: rgba(13,26,15,0.15);
+}
+.dining-teaser-content {
+  background: var(--forest); padding: 8rem 6rem;
+  display: flex; flex-direction: column; justify-content: center;
+  order: 1;
+}
+.dining-teaser-body {
+  font-size: 0.95rem; font-weight: 300; line-height: 1.85;
+  color: rgba(245,240,232,0.68); max-width: 420px;
+  margin: 1.8rem 0 2rem;
+}
+.dining-dishes {
+  display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem;
+}
+.dish-pill {
+  font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid rgba(201,169,110,0.3);
+  padding: 0.4rem 1rem;
+}
+
+/* ── ACTIVITIES TEASER ── */
+.activities-teaser {
+  padding: 12rem 5rem;
+  background: var(--deep);
+  display: grid; grid-template-columns: 42fr 58fr; gap: 5rem; align-items: center;
+}
+.activities-teaser-body {
+  font-size: 1rem; font-weight: 300; line-height: 1.8;
+  color: rgba(245,240,232,0.75); max-width: 440px; margin: 1.5rem 0 2.5rem;
+}
+.activities-teaser-img {
+  position: relative; overflow: hidden; max-height: 550px;
+  transform: translateY(2rem); /* Subtle offset down */
+}
+.activities-teaser-img img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+/* ── EXPLORE TEASER ── */
+.explore-teaser {
+  padding: 8rem 5rem;
+  background: var(--cream);
+}
+.explore-teaser-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 3.5rem;
+}
+.explore-teaser-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.explore-card {
+  display: block; text-decoration: none;
+  background: white; overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.explore-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(13,26,15,0.12); }
+.explore-card:active { transform: scale(0.98); }
+.explore-card-img {
+  height: 220px; background-size: cover; background-position: center;
+  transition: transform 0.6s ease;
+}
+.explore-card:hover .explore-card-img { transform: scale(1.04); }
+.explore-card-body { padding: 1.8rem; }
+.explore-card-dist { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.explore-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 300; color: var(--deep); line-height: 1.2; margin-bottom: 0.6rem;
+}
+.explore-card-desc { font-size: 0.78rem; font-weight: 300; line-height: 1.6; color: var(--muted); margin-bottom: 1rem; }
+.explore-card-link { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); }
+
+/* ── TESTIMONIALS ── */
+.testimonials {
+  background: var(--deep); padding: 8rem 5rem;
+  position: relative; overflow: hidden;
+}
+.testimonials::before {
+  content: '\201C';
+  position: absolute; top: 2rem; left: 3rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20rem; font-weight: 300;
+  color: rgba(201,169,110,0.06); line-height: 1; pointer-events: none;
+}
+.testimonials-header { text-align: center; margin-bottom: 4rem; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.testimonial-card {
+  border: 1px solid rgba(201,169,110,0.12);
+  padding: 2.5rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.testimonial-card:hover { border-color: rgba(201,169,110,0.35); transform: translateY(-4px); }
+.stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 1.2rem; }
+.testimonial-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 300; font-style: italic;
+  line-height: 1.7; color: rgba(245,240,232,0.82); margin-bottom: 1.5rem;
+}
+.testimonial-author { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.4); }
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  position: relative; overflow: hidden;
+  min-height: 65vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+}
+.cta-banner-bg {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1800&q=80') center/cover no-repeat;
+}
+.cta-banner-overlay { position: absolute; inset: 0; background: rgba(13,26,15,0.84); }
+.cta-banner-content { position: relative; z-index: 2; padding: 4rem; max-width: 680px; }
+.cta-banner-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300; line-height: 1.1; color: var(--cream); margin: 1rem 0 1.4rem;
+}
+.cta-banner-title em { font-style: italic; color: var(--gold-light); }
+.cta-banner-sub {
+  font-size: 0.9rem; font-weight: 300; line-height: 1.7;
+  color: rgba(245,240,232,0.65); margin-bottom: 2.5rem;
+}
+.cta-banner-actions { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+.cta-banner-platforms { font-size: 0.65rem; color: rgba(245,240,232,0.28); letter-spacing: 0.1em; margin-top: 2rem; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero-content { padding: 140px 3rem 5rem; }
+  .about, .dining-teaser, .activities-teaser, .retreats-teaser { grid-template-columns: 1fr !important; }
+  .dining-teaser-visual, .dining-teaser-content { order: 0; }
+  .activities-teaser-img { transform: none; }
+  .retreats-teaser, .activities-teaser { gap: 3rem; }
+  .about-visual { min-height: 400px; }
+  .about-text { padding: 4rem 3rem; }
+  .rooms-teaser { padding: 5rem 2.5rem; }
+  .rooms-teaser-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .rooms-teaser-grid { grid-template-columns: 1fr 1fr; }
+  .dining-teaser-content { padding: 4rem 3rem; }
+  .explore-teaser { padding: 5rem 2.5rem; }
+  .explore-teaser-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .explore-teaser-cards { grid-template-columns: 1fr 1fr; }
+  .testimonials { padding: 5rem 2.5rem; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hero-content { padding: 120px 2rem 4rem; }
+  .hero-title { font-size: 2.5rem; }
+  .hero-sub { font-size: 0.85rem; }
+  .hero-ctas { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .hero-scroll { right: 1.5rem; bottom: 1.5rem; }
+  .about-text { padding: 3rem 2rem; }
+  .about-body { font-size: 0.95rem; }
+  .about-highlights { grid-template-columns: 1fr; gap: 1rem; }
+  .about-badge { padding: 1.5rem; bottom: 1.5rem; right: 1rem; }
+  .about-badge .num { font-size: 2rem; }
+  .rooms-teaser { padding: 4rem 1.5rem; }
+  .retreats-teaser { padding: 5rem 1.5rem; gap: 2rem; }
+  .dining-teaser-content { padding: 3rem 2rem; }
+  .activities-teaser { padding: 5rem 1.5rem; gap: 2rem; }
+  .activities-teaser-body { font-size: 0.95rem; }
+  .explore-teaser { padding: 4rem 1.5rem; }
+  .explore-teaser-cards { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .explore-card-body { padding: 1.25rem; }
+  .explore-card-name { font-size: 1.2rem; }
+  .testimonials { padding: 4rem 1.5rem; }
+  .testimonials::before { font-size: 12rem; left: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-content { padding: 100px 1.25rem 3.5rem; }
+  .hero { min-height: 550px; }
+  .hero-eyebrow { font-size: 0.6rem; }
+  .hero-title { font-size: 2rem; margin-bottom: 1rem; }
+  .hero-sub { font-size: 0.82rem; margin-bottom: 2rem; }
+  .hero-scroll { display: none; }
+  .btn-primary { padding: 0.9rem 1.6rem; font-size: 0.68rem; }
+  .btn-ghost { font-size: 0.68rem; }
+  .about { min-height: auto; }
+  .about-visual { min-height: 280px; }
+  .about-text { padding: 3rem 1.5rem; }
+  .about-body { font-size: 0.95rem; }
+  .about-badge { display: none; }
+  .section-label { font-size: 0.6rem; }
+  .section-title { font-size: 1.8rem; }
+  .rooms-teaser { padding: 3.5rem 1.25rem; }
+  .rooms-teaser-header { margin-bottom: 2rem; }
+  .rooms-teaser-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .room-card-info { padding: 1.5rem 1.25rem; }
+  .room-card-type { font-size: 0.55rem; }
+  .room-card-name { font-size: 1.3rem; }
+  .retreats-teaser { padding: 4.5rem 1.25rem; gap: 2rem; }
+  .retreats-teaser-body { font-size: 0.92rem; }
+  .dining-teaser { min-height: auto; }
+  .dining-dishes { flex-wrap: wrap; justify-content: center; }
+  .dish-pill { font-size: 0.6rem; padding: 0.35rem 0.75rem; }
+  .activities-teaser { padding: 4.5rem 1.25rem; gap: 1.5rem; }
+  .activities-teaser-body { font-size: 0.92rem; margin: 1rem 0 1.5rem; }
+  .activities-teaser-img { max-height: 300px; }
+  .explore-teaser { padding: 3.5rem 1.25rem; }
+  .explore-teaser-header { margin-bottom: 2rem; }
+  .explore-teaser-cards { grid-template-columns: 1fr; gap: 1.2rem; }
+  .explore-card-img { height: 180px; }
+  .explore-card-body { padding: 1.5rem; }
+  .explore-card-dist { font-size: 0.55rem; }
+  .explore-card-name { font-size: 1.15rem; }
+  .explore-card-desc { font-size: 0.8rem; }
+  .testimonials { padding: 4rem 1.25rem; }
+  .testimonials-header { margin-bottom: 2.5rem; }
+  .testimonials::before { font-size: 8rem; top: 0.5rem; left: 0.5rem; }
+  .testimonial-card { padding: 1.5rem; }
+  .testimonial-text { font-size: 0.95rem; }
+  .stars { font-size: 0.65rem; }
+  .cta-banner { min-height: 50vh; }
+  .cta-banner-content { padding: 2.5rem 1rem; }
+  .cta-banner-title { font-size: 2rem; }
+  .cta-banner-sub { font-size: 0.85rem; }
+  .cta-banner-actions { flex-direction: column; gap: 0.75rem; }
+}

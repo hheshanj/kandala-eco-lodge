@@ -77,7 +77,7 @@
     .hero-bg {
       position: absolute; inset: 0;
       opacity: 0.5;
-      background: url('hero.jpeg') center/cover no-repeat;
+      background: url('/assets/images/hero.jpeg')
     }
     .hero-overlay {
       position: absolute; inset: 0;
@@ -255,6 +255,7 @@
     .room-card {
       position: relative; overflow: hidden; cursor: pointer;
       background: var(--deep);
+      display: block; text-decoration: none;
     }
     .room-card-img {
       width: 100%; aspect-ratio: 3/4; object-fit: cover;
@@ -266,20 +267,21 @@
       transform: scale(1.06); opacity: 0.72;
     }
     .room-card-info {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 2rem 1.8rem;
-      background: linear-gradient(to top, rgba(13,26,15,0.95) 0%, transparent 100%);
-      transform: translateY(30%); transition: transform 0.4s ease;
+      position: absolute; top: 0; left: 0; right: 0;
+      padding: 4rem 2.8rem;
+      background: linear-gradient(to bottom, rgba(13,26,15,0.85) 0%, transparent 100%);
+      transition: transform 0.5s ease, opacity 0.4s ease;
+      opacity: 0.9;
     }
-    .room-card:hover .room-card-info { transform: translateY(0); }
+    .room-card:hover .room-card-info { opacity: 1; transform: translateY(4px); }
     .room-card-type {
-      font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 0.5rem;
+      font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.8rem;
     }
     .room-card-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem; font-weight: 300; color: var(--cream);
-      line-height: 1.1; margin-bottom: 0.8rem;
+      font-size: 2.2rem; font-weight: 300; color: var(--cream);
+      line-height: 1.1; margin-bottom: 1rem;
     }
     .room-card-desc {
       font-size: 0.78rem; font-weight: 300; line-height: 1.6;
@@ -594,24 +596,115 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      nav { padding: 1.2rem 2rem; }
-      .nav-links { display: none; }
-      .hero-content { padding: 0 3rem 5rem; }
-      .about, .feature-split { grid-template-columns: 1fr; }
-      .about-visual { min-height: 400px; }
-      .about-text { padding: 4rem 3rem; }
-      .rooms-grid { grid-template-columns: 1fr 1fr; }
-      .rooms-section, .attractions, .testimonials, .amenities { padding: 5rem 2.5rem; }
-      .attractions-grid { grid-template-columns: repeat(2, 1fr); }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .amenities { grid-template-columns: 1fr; }
-      .amenities-text { padding-right: 0; }
-      .amenities-visual { min-height: 400px; }
-      footer { grid-template-columns: 1fr 1fr; padding: 3rem 2.5rem; }
-      .footer-bottom { padding: 1rem 2.5rem; flex-direction: column; gap: 0.5rem; }
-      .cta-form { flex-direction: column; }
-      .cta-form-group { border-right: none; border-bottom: 1px solid rgba(201,169,110,0.15); }
-      .cta-submit { padding: 1rem; }
-    }
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-links { display: none; }
+  .hero-content { padding: 0 3rem 5rem; }
+  .about, .feature-split { grid-template-columns: 1fr; }
+  .about-visual { min-height: 400px; }
+  .about-text { padding: 4rem 3rem; }
+  .rooms-grid { grid-template-columns: 1fr 1fr; }
+  .rooms-section, .attractions, .testimonials, .amenities { padding: 5rem 2.5rem; }
+  .attractions-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .amenities { grid-template-columns: 1fr; }
+  .amenities-text { padding-right: 0; }
+  .amenities-visual { min-height: 400px; }
+  footer { grid-template-columns: 1fr 1fr; padding: 3rem 2.5rem; }
+  .footer-bottom { padding: 1rem 2.5rem; flex-direction: column; gap: 0.5rem; }
+  .cta-form { flex-direction: column; }
+  .cta-form-group { border-right: none; border-bottom: 1px solid rgba(201,169,110,0.15); }
+  .cta-submit { padding: 1rem; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .hero-content { padding: 0 2rem 4rem; }
+  .hero-title { font-size: 2.5rem; }
+  .hero-sub { font-size: 0.85rem; }
+  .hero-ctas { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .about-text { padding: 3rem 2rem; }
+  .about-body { font-size: 0.95rem; }
+  .about-highlights { grid-template-columns: 1fr; gap: 0.75rem; }
+  .rooms-section, .attractions, .testimonials, .amenities { padding: 4rem 1.5rem; }
+  .rooms-header { flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 2.5rem; }
+  .rooms-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .feature-content { padding: 3rem 2rem; }
+  .feature-body { font-size: 0.9rem; }
+  .attractions-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .attraction-card { padding: 1.5rem; }
+  .attraction-name { font-size: 1.25rem; }
+  .dishes { gap: 0.75rem; }
+  .dish-item { padding: 0.75rem 1rem; }
+  .testimonials { padding: 3.5rem 1.5rem; }
+  .testimonials::before { font-size: 12rem; left: 1rem; }
+  .testimonial-card { padding: 1.5rem; }
+  .amenities { padding: 3rem 1.5rem; }
+  .amenity-list { grid-template-columns: 1fr; }
+  .amenities-visual { min-height: 300px; }
+  .amenities-visual-inner { display: none; }
+  .cta-section { min-height: 60vh; }
+  .cta-content { padding: 3rem 1.5rem; }
+  .cta-title { font-size: 2.25rem; }
+  .cta-sub { font-size: 0.85rem; }
+  footer { padding: 2.5rem 1.5rem; gap: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  nav { padding: 0.85rem 1rem; }
+  .nav-book { display: none; }
+  .hero { min-height: 600px; }
+  .hero-content { padding: 0 1rem 3.5rem; }
+  .hero-title { font-size: 2rem; }
+  .hero-eyebrow { font-size: 0.6rem; }
+  .hero-sub { font-size: 0.8rem; max-width: 100%; }
+  .btn-primary { padding: 0.85rem 1.5rem; font-size: 0.68rem; }
+  .btn-ghost { font-size: 0.68rem; }
+  .section-label { font-size: 0.55rem; }
+  .section-title { font-size: 1.8rem; }
+  .about-visual { min-height: 250px; }
+  .about-text { padding: 2.5rem 1.25rem; }
+  .about-body { font-size: 0.9rem; }
+  .about-highlights { gap: 0.6rem; }
+  .highlight-item p { font-size: 0.78rem; }
+  .rooms-section, .attractions, .testimonials, .amenities { padding: 3rem 1rem; }
+  .rooms-header { margin-bottom: 2rem; }
+  .rooms-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .room-card-info { padding: 1.5rem 1.25rem; }
+  .feature-split { grid-template-columns: 1fr; min-height: auto; }
+  .feature-visual { min-height: 280px; }
+  .feature-content { padding: 2.5rem 1.25rem; }
+  .feature-body { font-size: 0.9rem; margin: 1.25rem 0 1.5rem; }
+  .attractions-header { margin-bottom: 3rem; }
+  .attractions-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .attraction-card { padding: 1.5rem 1.25rem; }
+  .attraction-dist { font-size: 0.55rem; margin-bottom: 0.5rem; }
+  .attraction-name { font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .attraction-desc { font-size: 0.78rem; }
+  .testimonials-header { margin-bottom: 2.5rem; }
+  .testimonials::before { font-size: 8rem; top: 0.5rem; left: 0.5rem; }
+  .testimonials-grid { gap: 1rem; }
+  .testimonial-card { padding: 1.25rem; }
+  .testimonial-text { font-size: 0.95rem; }
+  .testimonial-author { font-size: 0.65rem; }
+  .amenities { gap: 0; }
+  .amenities-text { padding: 0 0 2rem; }
+  .amenities-visual { min-height: 220px; }
+  .amenity-item { font-size: 0.78rem; padding: 0.7rem 0; }
+  .cta-section { min-height: 50vh; }
+  .cta-content { padding: 2rem 1rem; }
+  .cta-title { font-size: 1.75rem; }
+  .cta-sub { font-size: 0.85rem; margin-bottom: 2rem; }
+  .cta-form { background: transparent; backdrop-filter: none; border: none; }
+  .cta-form-group { padding: 0.75rem 0; }
+  .cta-form-group label { font-size: 0.55rem; }
+  .cta-form-group input { font-size: 0.8rem; }
+  .cta-submit { width: 100%; }
+  footer { grid-template-columns: 1fr; padding: 2rem 1.25rem; gap: 2rem; }
+  .footer-logo { font-size: 1.1rem; margin-bottom: 1rem; }
+  .footer-tagline { max-width: 100%; font-size: 0.75rem; }
+  .footer-col { text-align: center; }
+  .footer-col ul { align-items: center; }
+  .footer-bottom { padding: 1rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+}
