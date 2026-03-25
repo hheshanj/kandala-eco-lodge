@@ -102,7 +102,9 @@
 .room-card {
   position: relative; overflow: hidden; cursor: pointer;
   background: var(--deep); display: block; text-decoration: none;
+  transition: transform 0.2s ease;
 }
+.room-card:active { transform: scale(0.98); }
 .room-card-img {
   width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block;
   transition: transform 0.7s ease, opacity 0.4s ease;
@@ -219,6 +221,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .explore-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(13,26,15,0.12); }
+.explore-card:active { transform: scale(0.98); }
 .explore-card-img {
   height: 220px; background-size: cover; background-position: center;
   transition: transform 0.6s ease;
@@ -332,44 +335,44 @@
 }
 
 @media (max-width: 480px) {
-  .hero-content { padding: 100px 1rem 3.5rem; }
-  .hero { min-height: 600px; }
+  .hero-content { padding: 100px 1.25rem 3.5rem; }
+  .hero { min-height: 550px; }
   .hero-eyebrow { font-size: 0.6rem; }
   .hero-title { font-size: 2rem; margin-bottom: 1rem; }
-  .hero-sub { font-size: 0.8rem; margin-bottom: 2rem; }
+  .hero-sub { font-size: 0.82rem; margin-bottom: 2rem; }
   .hero-scroll { display: none; }
-  .btn-primary { padding: 0.85rem 1.5rem; font-size: 0.68rem; }
+  .btn-primary { padding: 0.9rem 1.6rem; font-size: 0.68rem; }
   .btn-ghost { font-size: 0.68rem; }
   .about { min-height: auto; }
   .about-visual { min-height: 280px; }
-  .about-text { padding: 2.5rem 1.25rem; }
-  .about-body { font-size: 0.9rem; }
+  .about-text { padding: 3rem 1.5rem; }
+  .about-body { font-size: 0.95rem; }
   .about-badge { display: none; }
   .section-label { font-size: 0.6rem; }
   .section-title { font-size: 1.8rem; }
-  .rooms-teaser { padding: 3rem 1rem; }
+  .rooms-teaser { padding: 3.5rem 1.25rem; }
   .rooms-teaser-header { margin-bottom: 2rem; }
-  .rooms-teaser-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .rooms-teaser-grid { grid-template-columns: 1fr; gap: 1.2rem; }
   .room-card-info { padding: 1.5rem 1.25rem; }
   .room-card-type { font-size: 0.55rem; }
   .room-card-name { font-size: 1.3rem; }
-  .retreats-teaser { padding: 4rem 1rem; gap: 2rem; }
-  .retreats-teaser-body { font-size: 0.9rem; }
+  .retreats-teaser { padding: 4.5rem 1.25rem; gap: 2rem; }
+  .retreats-teaser-body { font-size: 0.92rem; }
   .dining-teaser { min-height: auto; }
   .dining-dishes { flex-wrap: wrap; justify-content: center; }
   .dish-pill { font-size: 0.6rem; padding: 0.35rem 0.75rem; }
-  .activities-teaser { padding: 4rem 1rem; gap: 1.5rem; }
-  .activities-teaser-body { font-size: 0.9rem; margin: 1rem 0 1.5rem; }
+  .activities-teaser { padding: 4.5rem 1.25rem; gap: 1.5rem; }
+  .activities-teaser-body { font-size: 0.92rem; margin: 1rem 0 1.5rem; }
   .activities-teaser-img { max-height: 300px; }
-  .explore-teaser { padding: 3rem 1rem; }
+  .explore-teaser { padding: 3.5rem 1.25rem; }
   .explore-teaser-header { margin-bottom: 2rem; }
-  .explore-teaser-cards { grid-template-columns: 1fr; gap: 1rem; }
+  .explore-teaser-cards { grid-template-columns: 1fr; gap: 1.2rem; }
   .explore-card-img { height: 180px; }
-  .explore-card-body { padding: 1.25rem; }
+  .explore-card-body { padding: 1.5rem; }
   .explore-card-dist { font-size: 0.55rem; }
   .explore-card-name { font-size: 1.15rem; }
-  .explore-card-desc { font-size: 0.75rem; }
-  .testimonials { padding: 3rem 1rem; }
+  .explore-card-desc { font-size: 0.8rem; }
+  .testimonials { padding: 4rem 1.25rem; }
   .testimonials-header { margin-bottom: 2.5rem; }
   .testimonials::before { font-size: 8rem; top: 0.5rem; left: 0.5rem; }
   .testimonial-card { padding: 1.5rem; }

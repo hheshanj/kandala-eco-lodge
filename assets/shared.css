@@ -67,18 +67,11 @@ nav.nav-solid {
   transition: transform 0.3s ease;
 }
 .nav-logo-img {
-  height: 105px; width: auto;
+  height: 0px; width: auto;
   transition: height 0.3s ease;
   display: block;
-  margin-left: -2.5rem; /* Pulling the icon over the text's padding */
-  position: relative; top: -2px; /* Slight visual centering tweak */
-}
-.nav-logo-img1 {
-  height: 105px; width: auto;
-  transition: height 0.3s ease;
-  display: block;
-  margin-left: -3.9rem; /* Pulling the icon over the text's padding */
-  position: relative; top: -2px; /* Slight visual centering tweak */
+  margin-left: -3.2rem; /* Keep it close to the text */
+  position: relative; top: -1px;
 }
 .nav-logo-text {
   font-family: 'Cormorant Garamond', serif;
@@ -87,7 +80,7 @@ nav.nav-solid {
 }
 nav.scrolled .nav-logo-img,
 nav.nav-solid .nav-logo-img {
-  height: 60px;
+  height: 82px;
 }
 nav.scrolled .nav-logo-text,
 nav.nav-solid .nav-logo-text {
@@ -253,6 +246,7 @@ section { position: relative; }
   transition: background 0.2s, transform 0.2s;
 }
 .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-primary:active { transform: scale(0.96); }
 
 .btn-ghost {
   display: inline-block;
@@ -261,9 +255,10 @@ section { position: relative; }
   color: var(--cream);
   border-bottom: 1px solid rgba(245,240,232,0.4);
   padding-bottom: 2px;
-  transition: border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }
 .btn-ghost:hover { color: var(--gold-light); border-color: var(--gold-light); }
+.btn-ghost:active { transform: scale(0.96); }
 
 .btn-outline-gold {
   display: inline-block;
@@ -272,11 +267,12 @@ section { position: relative; }
   color: var(--gold);
   border: 1px solid rgba(201,169,110,0.45);
   padding: 0.75rem 1.8rem;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
 }
 .btn-outline-gold:hover {
-  background: var(--gold); color: var(--deep); border-color: var(--gold);
+  background: var(--gold); color: var(--deep); border-color: var(--gold); transform: translateY(-2px);
 }
+.btn-outline-gold:active { transform: scale(0.96); }
 
 /* Section-level link (e.g. "View All →") */
 .section-link {
@@ -322,7 +318,7 @@ footer {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.95rem; font-weight: 500; letter-spacing: 0.12em;
   color: white; text-transform: uppercase; line-height: 1.2;
-  margin-left: -60px;
+  margin-left: -45px;
   padding-left: 1px;
 }
 .footer-logo-img {
@@ -332,7 +328,7 @@ footer {
 }
 .footer-tagline {
   font-size: 0.78rem; font-weight: 300; line-height: 1.8;
-  color: rgba(245,240,232,0.45); max-width: 240px;
+  color: rgba(255, 239, 214, 0.45); max-width: 240px;
 }
 .footer-social { display: flex; gap: 0.8rem; margin-top: 1.5rem; }
 .footer-social a {
@@ -416,24 +412,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  html { font-size: 106.25%; } /* ~17px base */
   nav { padding: 1rem 1.5rem; }
   nav.scrolled, nav.nav-solid { padding: 0.8rem 1.5rem; }
-  .nav-logo-img { height: 70px !important; margin-left: -1.5rem; }
-  .nav-logo-img1 { height: 70px !important; margin-left: -2.5rem; }
-  .nav-logo-text { font-size: 0.75rem; }
-  .page-hero { min-height: 320px; }
-  .page-hero-content { padding: 100px 1.5rem 2.5rem; }
-  .page-hero-title { font-size: 2rem; }
-  footer { padding: 2.5rem 1.5rem; gap: 1.5rem; }
-  .footer-bottom { padding: 1rem 1.5rem; }
-}
-
-@media (max-width: 480px) {
-  html { font-size: 90.625%; } /* ~14.5px base (maintaining 1.5px reduction) */
-  nav { padding: 0.85rem 1rem; }
-  nav.scrolled, nav.nav-solid { padding: 0.7rem 1rem; }
-  .nav-logo-img { height: 55px !important; margin-left: -1rem; }
-  .nav-logo-img1 { height: 55px !important; margin-left: -1.8rem; }
+  .nav-logo-img { height: 75px !important; margin-left: -0.8rem; }
   .nav-logo-text { font-size: 0.65rem; }
   .page-hero { min-height: 260px; }
   .page-hero-content { padding: 90px 1rem 2rem; }
@@ -448,4 +430,12 @@ footer {
   .footer-col { text-align: center; }
   .footer-col ul { align-items: center; }
   .footer-bottom { padding: 1rem; }
+}
+
+@media (max-width: 480px) {
+  html { font-size: 100%; } /* 16px base */
+  nav { padding: 0.85rem 1.2rem; }
+  nav.scrolled, nav.nav-solid { padding: 0.75rem 1.2rem; }
+  .nav-logo-img { height: 65px !important; margin-left: -0.5rem; }
+  .nav-logo-text { font-size: 0.6rem; }
 }
