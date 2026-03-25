@@ -7,6 +7,7 @@
 .explore-intro-inner {
   max-width: 740px; margin: 0 auto; text-align: center;
 }
+.explore-intro-title { margin: 0.8rem 0 1.5rem; }
 .explore-intro-body {
   font-size: 1.05rem; font-weight: 300; line-height: 1.85;
   color: #3a3a3a; margin-top: 1rem;
@@ -65,21 +66,27 @@
 
 .activity-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3rem 2rem;
+  align-items: start;
 }
 .activity-card {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: transform 0.4s ease, background 0.4s ease;
-  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), background 0.4s ease, border-color 0.4s ease;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
+.activity-card:nth-child(1) { grid-column: 1 / 8; }
+.activity-card:nth-child(2) { grid-column: 8 / 13; margin-top: 8rem; }
+.activity-card:nth-child(3) { grid-column: 2 / 7; margin-top: -4rem; }
+.activity-card:nth-child(4) { grid-column: 7 / 13; margin-top: 2rem; }
+
 .activity-card:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-12px) scale(1.01);
+  background: rgba(255, 255, 255, 0.06);
   border-color: rgba(201, 169, 110, 0.3);
 }
 .activity-card-img {
@@ -119,17 +126,17 @@
   max-width: 960px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 2fr;
   align-items: center;
   background: white;
   box-shadow: 0 20px 60px rgba(13,26,15,0.06);
   border: 2.5rem solid white;
-  gap: 3.5rem;
+  gap: 2.5rem;
 }
 .logistics-text h2 { margin-bottom: 1.5rem; }
 .logistics-body {
   font-size: 0.92rem; font-weight: 300; line-height: 1.75;
-  color: var(--text); margin-bottom: 2.5rem;
+  color: var(--text); margin-bottom: 1.5rem;
 }
 
 .logistics-options { display: flex; flex-direction: column; gap: 1.8rem; margin-bottom: 2.5rem; }
@@ -149,7 +156,7 @@
 
 .logistics-footer {
   border-top: 1px solid rgba(46,77,48,0.08);
-  padding-top: 2.5rem;
+  padding-top: 1rem;
 }
 .logistics-footer p {
   font-size: 0.85rem; font-weight: 300; color: var(--muted);
@@ -172,8 +179,13 @@
   .attractions-full { padding: 2rem 2.5rem 6rem; }
   .attractions-grid { grid-template-columns: 1fr 1fr; }
   .local-experiences { padding: 5rem 2.5rem; }
-  .activity-grid { grid-template-columns: 1fr 1fr; }
-  .local-exp-header { margin-bottom: 3rem; }
+  .activity-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem;
+  }
+  .activity-card:nth-child(n) { grid-column: auto; margin-top: 0; }
+  .activity-card:nth-child(even) { margin-top: 3rem; }
+  .local-exp-header { margin-bottom: 4rem; }
   .logistics { padding: 6rem 1.5rem; }
   .logistics-inner { grid-template-columns: 1fr; border: 2rem solid white; padding: 0; gap: 3.5rem; }
   .logistics-text { padding: 2rem; }
@@ -181,7 +193,72 @@
   .logistics-text { order: 1; }
 }
 
-@media (max-width: 600px) {
-  .activity-grid { grid-template-columns: 1fr; }
-  .local-exp-content { padding: 4rem 2rem; }
+@media (max-width: 768px) {
+  .explore-intro { padding: 3rem 1.5rem 1.5rem; }
+  .explore-intro-body { font-size: 0.9rem; }
+  .attractions-full { padding: 1.5rem 1.5rem 4rem; }
+  .attractions-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .attraction-card { padding: 0; }
+  .attraction-img { height: 180px; }
+  .attraction-info { padding: 1.25rem; }
+  .attraction-dist { font-size: 0.52rem; padding: 0.25rem 0.6rem; margin-bottom: 0.8rem; }
+  .attraction-name { font-size: 1.25rem; margin-bottom: 0.5rem; }
+  .attraction-desc { font-size: 0.78rem; margin-bottom: 0.8rem; }
+  .attraction-tip { font-size: 0.7rem; }
+  .local-experiences { padding: 4rem 1.5rem; }
+  .local-exp-header { margin-bottom: 2rem; }
+  .local-exp-body { font-size: 0.9rem; }
+  .activity-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .activity-card:nth-child(n) { margin-top: 0; }
+  .activity-card-img { height: 160px; }
+  .activity-card-body { padding: 1.25rem; }
+  .activity-card-title { font-size: 1.1rem; margin-bottom: 0.6rem; }
+  .activity-card-desc { font-size: 0.75rem; }
+  .logistics { padding: 4rem 1rem; }
+  .logistics-inner { border: 1.5rem solid white; gap: 2rem; }
+  .logistics-text { padding: 1.5rem; }
+  .logistics-visual { min-height: 260px; }
+  .logistics-body { font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .logistics-options { gap: 1.25rem; margin-bottom: 1.5rem; }
+  .log-opt { gap: 1rem; }
+  .log-opt-icon { min-width: 36px; height: 36px; font-size: 0.95rem; }
+  .log-opt-text strong { font-size: 0.82rem; }
+  .log-opt-text p { font-size: 0.72rem; }
+}
+
+@media (max-width: 480px) {
+  .explore-intro { padding: 2.5rem 1rem 1rem; }
+  .explore-intro-inner { max-width: 100%; }
+  .explore-intro-body { font-size: 0.85rem; margin-top: 0.75rem; }
+  .section-label { font-size: 0.55rem; }
+  .section-title { font-size: 1.6rem; }
+  .attractions-full { padding: 1rem 1rem 3rem; }
+  .attractions-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .attraction-img { height: 200px; }
+  .attraction-info { padding: 1.25rem; }
+  .attraction-dist { font-size: 0.5rem; }
+  .attraction-name { font-size: 1.1rem; }
+  .attraction-desc { font-size: 0.75rem; line-height: 1.5; }
+  .attraction-tip { font-size: 0.68rem; }
+  .local-experiences { padding: 3rem 1rem; }
+  .local-exp-header { margin-bottom: 1.5rem; }
+  .local-exp-body { font-size: 0.85rem; }
+  .activity-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .activity-card-img { height: 180px; }
+  .activity-card-body { padding: 1.5rem; }
+  .activity-card-title { font-size: 1.15rem; }
+  .activity-card-desc { font-size: 0.78rem; }
+  .logistics { padding: 3rem 0.75rem; }
+  .logistics-inner { border: 1rem solid white; gap: 1.5rem; }
+  .logistics-text { padding: 1rem; }
+  .logistics-visual { min-height: 220px; }
+  .logistics-text h2 { margin-bottom: 1rem; }
+  .logistics-body { font-size: 0.8rem; margin-bottom: 1.25rem; }
+  .logistics-options { gap: 1rem; margin-bottom: 1.25rem; }
+  .log-opt { gap: 0.75rem; }
+  .log-opt-icon { min-width: 32px; height: 32px; font-size: 0.85rem; }
+  .log-opt-text strong { font-size: 0.78rem; }
+  .log-opt-text p { font-size: 0.7rem; line-height: 1.5; }
+  .logistics-footer { padding-top: 1.5rem; }
+  .logistics-footer p { font-size: 0.78rem; margin-bottom: 1rem; }
 }

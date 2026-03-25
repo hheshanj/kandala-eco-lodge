@@ -7,6 +7,7 @@
   display: flex; align-items: flex-end;
   background-color: #0d1a0f;
   overflow: hidden;
+  padding-top: 140px; /* Ensures content clears fixed nav */
 }
 .hero-bg {
   position: absolute; inset: 0;
@@ -19,7 +20,7 @@
 }
 .hero-content {
   position: relative; z-index: 2;
-  padding: 0 6rem 7rem;
+  padding: 180px 6rem 7rem;
   max-width: 800px;
 }
 .hero-eyebrow {
@@ -63,7 +64,7 @@
 
 /* ── ABOUT ── */
 .about {
-  display: grid; grid-template-columns: 1fr 1fr;
+  display: grid; grid-template-columns: 45fr 55fr;
   min-height: 90vh;
 }
 .about-visual { position: relative; overflow: hidden; }
@@ -109,16 +110,17 @@
 }
 .room-card:hover .room-card-img { transform: scale(1.06); opacity: 0.72; }
 .room-card-info {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 2rem 1.8rem;
-  background: linear-gradient(to top, rgba(13,26,15,0.96) 0%, transparent 100%);
-  transform: translateY(38%); transition: transform 0.4s ease;
+  position: absolute; top: 0; left: 0; right: 0;
+  padding: 4rem 2.8rem;
+  background: linear-gradient(to bottom, rgba(13,26,15,0.85) 0%, transparent 100%);
+  transition: transform 0.5s ease, opacity 0.4s ease;
+  opacity: 0.9;
 }
-.room-card:hover .room-card-info { transform: translateY(0); }
-.room-card-type { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.room-card:hover .room-card-info { opacity: 1; transform: translateY(4px); }
+.room-card-type { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
 .room-card-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem; font-weight: 300; color: var(--cream); line-height: 1.1; margin-bottom: 0.6rem;
+  font-size: 2.2rem; font-weight: 300; color: var(--cream); line-height: 1.1; margin-bottom: 1rem;
 }
 .room-card-hook {
   font-size: 0.78rem; font-weight: 300; line-height: 1.6;
@@ -136,9 +138,9 @@
 
 /* ── RETREATS TEASER ── */
 .retreats-teaser {
-  padding: 8rem 5rem;
+  padding: 10rem 5rem;
   background: var(--cream);
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  display: grid; grid-template-columns: 55fr 45fr; gap: 6rem; align-items: center;
 }
 .retreats-teaser-body {
   font-size: 1rem; font-weight: 300; line-height: 1.8;
@@ -153,18 +155,19 @@
 
 /* ── DINING TEASER ── */
 .dining-teaser {
-  display: grid; grid-template-columns: 1fr 1fr;
-  min-height: 70vh;
+  display: grid; grid-template-columns: 55fr 45fr;
+  min-height: 75vh;
 }
-.dining-teaser-visual { position: relative; overflow: hidden; }
-.dining-teaser-visual img { width: 100%; height: 100%; object-fit: cover; }
+.dining-teaser-visual { position: relative; overflow: hidden; order: 2; }
+.dining-teaser-visual img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.1); }
 .dining-teaser-overlay {
   position: absolute; inset: 0;
-  background: rgba(13,26,15,0.2);
+  background: rgba(13,26,15,0.15);
 }
 .dining-teaser-content {
-  background: var(--forest); padding: 6rem 5rem;
+  background: var(--forest); padding: 8rem 6rem;
   display: flex; flex-direction: column; justify-content: center;
+  order: 1;
 }
 .dining-teaser-body {
   font-size: 0.95rem; font-weight: 300; line-height: 1.85;
@@ -182,16 +185,17 @@
 
 /* ── ACTIVITIES TEASER ── */
 .activities-teaser {
-  padding: 8rem 5rem;
+  padding: 12rem 5rem;
   background: var(--deep);
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  display: grid; grid-template-columns: 42fr 58fr; gap: 5rem; align-items: center;
 }
 .activities-teaser-body {
   font-size: 1rem; font-weight: 300; line-height: 1.8;
   color: rgba(245,240,232,0.75); max-width: 440px; margin: 1.5rem 0 2.5rem;
 }
 .activities-teaser-img {
-  position: relative; overflow: hidden; max-height: 500px;
+  position: relative; overflow: hidden; max-height: 550px;
+  transform: translateY(2rem); /* Subtle offset down */
 }
 .activities-teaser-img img {
   width: 100%; height: 100%; object-fit: cover;
@@ -285,8 +289,10 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  .hero-content { padding: 0 3rem 5rem; }
-  .about, .dining-teaser, .activities-teaser, .retreats-teaser { grid-template-columns: 1fr; }
+  .hero-content { padding: 140px 3rem 5rem; }
+  .about, .dining-teaser, .activities-teaser, .retreats-teaser { grid-template-columns: 1fr !important; }
+  .dining-teaser-visual, .dining-teaser-content { order: 0; }
+  .activities-teaser-img { transform: none; }
   .retreats-teaser, .activities-teaser { gap: 3rem; }
   .about-visual { min-height: 400px; }
   .about-text { padding: 4rem 3rem; }
@@ -301,10 +307,77 @@
   .testimonials-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 600px) {
-  .hero-content { padding: 0 1.5rem 4rem; }
-  .rooms-teaser-grid { grid-template-columns: 1fr; }
-  .explore-teaser-cards { grid-template-columns: 1fr; }
-  .cta-banner-content { padding: 2rem; }
-  .dining-teaser-visual { min-height: 300px; }
+@media (max-width: 768px) {
+  .hero-content { padding: 120px 2rem 4rem; }
+  .hero-title { font-size: 2.5rem; }
+  .hero-sub { font-size: 0.85rem; }
+  .hero-ctas { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .hero-scroll { right: 1.5rem; bottom: 1.5rem; }
+  .about-text { padding: 3rem 2rem; }
+  .about-body { font-size: 0.95rem; }
+  .about-highlights { grid-template-columns: 1fr; gap: 1rem; }
+  .about-badge { padding: 1.5rem; bottom: 1.5rem; right: 1rem; }
+  .about-badge .num { font-size: 2rem; }
+  .rooms-teaser { padding: 4rem 1.5rem; }
+  .retreats-teaser { padding: 5rem 1.5rem; gap: 2rem; }
+  .dining-teaser-content { padding: 3rem 2rem; }
+  .activities-teaser { padding: 5rem 1.5rem; gap: 2rem; }
+  .activities-teaser-body { font-size: 0.95rem; }
+  .explore-teaser { padding: 4rem 1.5rem; }
+  .explore-teaser-cards { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .explore-card-body { padding: 1.25rem; }
+  .explore-card-name { font-size: 1.2rem; }
+  .testimonials { padding: 4rem 1.5rem; }
+  .testimonials::before { font-size: 12rem; left: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-content { padding: 100px 1rem 3.5rem; }
+  .hero { min-height: 600px; }
+  .hero-eyebrow { font-size: 0.6rem; }
+  .hero-title { font-size: 2rem; margin-bottom: 1rem; }
+  .hero-sub { font-size: 0.8rem; margin-bottom: 2rem; }
+  .hero-scroll { display: none; }
+  .btn-primary { padding: 0.85rem 1.5rem; font-size: 0.68rem; }
+  .btn-ghost { font-size: 0.68rem; }
+  .about { min-height: auto; }
+  .about-visual { min-height: 280px; }
+  .about-text { padding: 2.5rem 1.25rem; }
+  .about-body { font-size: 0.9rem; }
+  .about-badge { display: none; }
+  .section-label { font-size: 0.6rem; }
+  .section-title { font-size: 1.8rem; }
+  .rooms-teaser { padding: 3rem 1rem; }
+  .rooms-teaser-header { margin-bottom: 2rem; }
+  .rooms-teaser-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .room-card-info { padding: 1.5rem 1.25rem; }
+  .room-card-type { font-size: 0.55rem; }
+  .room-card-name { font-size: 1.3rem; }
+  .retreats-teaser { padding: 4rem 1rem; gap: 2rem; }
+  .retreats-teaser-body { font-size: 0.9rem; }
+  .dining-teaser { min-height: auto; }
+  .dining-dishes { flex-wrap: wrap; justify-content: center; }
+  .dish-pill { font-size: 0.6rem; padding: 0.35rem 0.75rem; }
+  .activities-teaser { padding: 4rem 1rem; gap: 1.5rem; }
+  .activities-teaser-body { font-size: 0.9rem; margin: 1rem 0 1.5rem; }
+  .activities-teaser-img { max-height: 300px; }
+  .explore-teaser { padding: 3rem 1rem; }
+  .explore-teaser-header { margin-bottom: 2rem; }
+  .explore-teaser-cards { grid-template-columns: 1fr; gap: 1rem; }
+  .explore-card-img { height: 180px; }
+  .explore-card-body { padding: 1.25rem; }
+  .explore-card-dist { font-size: 0.55rem; }
+  .explore-card-name { font-size: 1.15rem; }
+  .explore-card-desc { font-size: 0.75rem; }
+  .testimonials { padding: 3rem 1rem; }
+  .testimonials-header { margin-bottom: 2.5rem; }
+  .testimonials::before { font-size: 8rem; top: 0.5rem; left: 0.5rem; }
+  .testimonial-card { padding: 1.5rem; }
+  .testimonial-text { font-size: 0.95rem; }
+  .stars { font-size: 0.65rem; }
+  .cta-banner { min-height: 50vh; }
+  .cta-banner-content { padding: 2.5rem 1rem; }
+  .cta-banner-title { font-size: 2rem; }
+  .cta-banner-sub { font-size: 0.85rem; }
+  .cta-banner-actions { flex-direction: column; gap: 0.75rem; }
 }
