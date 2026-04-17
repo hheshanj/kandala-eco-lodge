@@ -10,8 +10,8 @@
   --forest:     #1c3220;
   --moss:       #2e4d30;
   --sage:       #6a8c5e;
-  --gold:       #c9a96e;
-  --gold-light: #e8c98a;
+  --gold:       #eeb048;
+  --gold-light: #ddac60;
   --cream:      #f5f0e8;
   --warm-white: #faf8f4;
   --text:       #1a1a1a;
@@ -62,15 +62,14 @@ nav.nav-solid {
 }
 
 .nav-logo {
-  display: flex; align-items: center; gap: 1.2rem;
+  display: flex; align-items: center; gap: 0.7rem;
   text-decoration: none;
   transition: transform 0.3s ease;
 }
 .nav-logo-img {
-  height: 0px; width: auto;
+  height: 10px; width: auto;
   transition: height 0.3s ease;
   display: block;
-  margin-left: -3.2rem; /* Keep it close to the text */
   position: relative; top: -1px;
 }
 .nav-logo-text {
@@ -80,7 +79,7 @@ nav.nav-solid {
 }
 nav.scrolled .nav-logo-img,
 nav.nav-solid .nav-logo-img {
-  height: 82px;
+  height: 46px;
 }
 nav.scrolled .nav-logo-text,
 nav.nav-solid .nav-logo-text {
@@ -310,19 +309,17 @@ footer {
   display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
 }
 .footer-logo {
-  display: flex; align-items: center; gap: 0.8rem;
+  display: flex; align-items: center; gap: 0.5rem;
   text-decoration: none; margin-bottom: 1rem;
-  margin-left: -50px;
 }
 .footer-logo-text {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.95rem; font-weight: 500; letter-spacing: 0.12em;
   color: white; text-transform: uppercase; line-height: 1.2;
-  margin-left: -45px;
   padding-left: 1px;
 }
 .footer-logo-img {
-  height: 90px; width: auto;
+  height: 60px; width: auto;
   filter: brightness(0) invert(1);
   opacity: 0.85;
 }
@@ -415,7 +412,7 @@ footer {
   html { font-size: 106.25%; } /* ~17px base */
   nav { padding: 1rem 1.5rem; }
   nav.scrolled, nav.nav-solid { padding: 0.8rem 1.5rem; }
-  .nav-logo-img { height: 75px !important; margin-left: -2.9rem; }
+  .nav-logo-img { height: 46px !important; }
   .nav-logo-text { font-size: 0.65rem; }
   .page-hero { min-height: 260px; }
   .page-hero-content { padding: 90px 1rem 2rem; }
@@ -436,7 +433,7 @@ footer {
   html { font-size: 100%; } /* 16px base */
   nav { padding: 0.85rem 1.2rem; }
   nav.scrolled, nav.nav-solid { padding: 0.75rem 1.2rem; }
-  .nav-logo-img { height: 65px !important; margin-left: -2.5rem; }
+  .nav-logo-img { height: 40px !important; }
   .nav-logo-text { font-size: 0.6rem; }
 }
 
